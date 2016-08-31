@@ -9,6 +9,10 @@ set nocompatible
 
 " tpreston settings
 set colorcolumn=72,80
+" expand all tabs to four spaces
+set shiftwidth=4 tabstop=4 expandtab
+" unless we're writing C, then tabs are actaully 8 char tabs
+autocmd FileType c setlocal shiftwidth=8 tabstop=8 noexpandtab
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
