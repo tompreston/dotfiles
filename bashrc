@@ -35,9 +35,11 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+export TERM="xterm-256color"
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -79,11 +81,9 @@ BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
 if [ "$color_prompt" = yes ]; then
-    # original colour prompt
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    # my colour prompt
-    #PS1="$HC${debian_chroot:+($debian_chroot)}$FWHT\u$RS$FRED@$RS$FMAG\h $RS$FCYN\w $RS$FYEL\$ $RS"
-    PS1="${debian_chroot:+($debian_chroot)}\u@\h:$RS\w$RS$FYEL\$$RS "
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0m\]\$ '
+    # gold dollar in prompt to easily find where you are
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\[\033[33m\]\$\[\033[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -110,17 +110,21 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# even more `git` aliases
-alias gs='git status'
+# tpreston aliases
+alias ctgit='ssh git@git.codethink.co.uk'
 alias gl='git log'
-alias ga='git add'
+alias gs='git status'
 alias ga='git add'
 alias gd='git diff'
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
