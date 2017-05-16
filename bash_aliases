@@ -1,0 +1,5 @@
+alias ctgit='ssh git@git.codethink.co.uk'
+alias gl='git log'
+alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
