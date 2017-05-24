@@ -1,4 +1,7 @@
 " Thomas Preston ~/.vimrc
+" $ ls ~/.vim/bundle/
+" file-line
+" vim-sensible
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -27,3 +30,4 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
