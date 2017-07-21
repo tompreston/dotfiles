@@ -12,9 +12,8 @@ setlocal shiftwidth=4 tabstop=4 expandtab
 "autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab
 " tabs in C lang are real tabs of 8 chars
 autocmd FileType c setlocal shiftwidth=8 tabstop=8 noexpandtab
-" TODO standup tabs 2 chars
-" tabs in standup.txt are 2 chars
-"autocmd VimEnter * if @% == 'standup.txt' | setlocal shiftwidth=2 tabstop=2 expandtab | endif
+autocmd FileType cpp setlocal shiftwidth=8 tabstop=8 noexpandtab
+autocmd FileType dts setlocal shiftwidth=8 tabstop=8 noexpandtab
 
 set number
 "set relativenumber
