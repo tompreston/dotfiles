@@ -9,6 +9,9 @@ filetype plugin indent on
 "setlocal shiftwidth=8 tabstop=8 noexpandtab
 " tabs in python files are 4 spaces
 autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab
+" 2 spaces in standup
+autocmd VimEnter * if @% == "Work/standup.txt" |
+	\ echom "in standup" | setlocal shiftwidth=2 tabstop=2 expandtab | endif
 
 set number
 "set relativenumber
