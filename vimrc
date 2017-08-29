@@ -5,7 +5,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-" tabs in all files are 4 spaces
+" tabs in all files are 8 char length actual-tab-tabs (default)
 "setlocal shiftwidth=8 tabstop=8 noexpandtab
 " tabs in python files are 4 spaces
 autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab
