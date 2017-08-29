@@ -1,19 +1,14 @@
 " Thomas Preston ~/.vimrc
 " $ ls ~/.vim/bundle/
-" file-line
-" vim-sensible
+" file-line  vim-sensible  vim-surround
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
 " tabs in all files are 4 spaces
-setlocal shiftwidth=4 tabstop=4 expandtab
+"setlocal shiftwidth=8 tabstop=8 noexpandtab
 " tabs in python files are 4 spaces
-"autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab
-" tabs in C lang are real tabs of 8 chars
-autocmd FileType c setlocal shiftwidth=8 tabstop=8 noexpandtab
-autocmd FileType cpp setlocal shiftwidth=8 tabstop=8 noexpandtab
-autocmd FileType dts setlocal shiftwidth=8 tabstop=8 noexpandtab
+autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab
 
 set number
 "set relativenumber
