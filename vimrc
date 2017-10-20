@@ -7,13 +7,14 @@ filetype plugin indent on
 
 " tabs in all files are 8 char length actual-tab-tabs (default)
 "setlocal shiftwidth=8 tabstop=8 noexpandtab
-" tabs in python files are 4 spaces
+" tab is 4 spaces
 autocmd FileType py setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType css setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 expandtab
-" 2 spaces in standup and html
-autocmd VimEnter * if @% == "/home/tpreston/Work/standup.txt" |
+" tab is 2 spaces
+autocmd VimEnter * if @% =~ "Work/standup.txt" |
 	\ echom "in standup" | setlocal shiftwidth=2 tabstop=2 expandtab | endif
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 expandtab
 
