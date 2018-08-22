@@ -6,5 +6,3 @@ alias ga='git add'
 alias gl='git log'
 
 alias vlc='flatpak run org.videolan.VLC'
-
-alias st='st -e tmux'
