@@ -58,30 +58,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# ANSI color codes
-RS="\[\033[0m\]"    # reset
-HC="\[\033[1m\]"    # hicolor
-UL="\[\033[4m\]"    # underline
-INV="\[\033[7m\]"   # inverse background and foreground
-FBLK="\[\033[30m\]" # foreground black
-FRED="\[\033[31m\]" # foreground red
-FGRN="\[\033[32m\]" # foreground green
-FYEL="\[\033[33m\]" # foreground yellow
-FBLE="\[\033[34m\]" # foreground blue
-FMAG="\[\033[35m\]" # foreground magenta
-FCYN="\[\033[36m\]" # foreground cyan
-FWHT="\[\033[37m\]" # foreground white
-BBLK="\[\033[40m\]" # background black
-BRED="\[\033[41m\]" # background red
-BGRN="\[\033[42m\]" # background green
-BYEL="\[\033[43m\]" # background yellow
-BBLE="\[\033[44m\]" # background blue
-BMAG="\[\033[45m\]" # background magenta
-BCYN="\[\033[46m\]" # background cyan
-BWHT="\[\033[47m\]" # background white
-
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     # gold dollar in prompt to easily find where you are
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\[\033[33m\]\$\[\033[0m\] '
 else
@@ -102,8 +80,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -111,24 +89,12 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-
-# tpreston aliases
-alias ctgit='ssh git@git.codethink.co.uk'
-alias gl='git log'
-alias gs='git status'
-alias ga='git add'
-alias gd='git diff'
-
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -148,4 +114,8 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
 fi
