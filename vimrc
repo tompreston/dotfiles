@@ -3,10 +3,18 @@
 " $ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 " 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 " $ ls ~/.vim/bundle/
-" file-line  vim-{sensible,surround}
+" file-line
+" vim-bitbake
+" vim-colors-solarized
+" vim-sensible
+" vim-surround
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
+
+syntax enable
+" for some reason I have to use dark themes in st
+set background=dark
+colorscheme solarized
 
 " an alternative to setting manually is vim-sleuth
 " tabs in all files are 8 char length actual-tab-tabs (default)
