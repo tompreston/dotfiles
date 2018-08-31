@@ -6,6 +6,7 @@
 " file-line
 " vim-bitbake
 " vim-colors-solarized
+" vim-localvimrc
 " vim-sensible
 " vim-surround
 execute pathogen#infect()
@@ -48,3 +49,8 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 map <F5> :setlocal spell! spelllang=en_gb<CR>
+
+" local vimrc
+let g:localvimrc_whitelist=[
+	\'/home/tpreston/Work/co034/sel4-tutorials-manifest',
+\]
