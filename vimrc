@@ -14,7 +14,7 @@ filetype plugin indent on
 
 syntax enable
 " for some reason I have to use dark themes in st
-set background=dark
+set background=light
 colorscheme solarized
 
 " an alternative to setting manually is vim-sleuth
