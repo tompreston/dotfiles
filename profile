@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export EDITOR="vim"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
 	# include .bashrc if it exists
@@ -24,4 +26,4 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
-export SUP_LOG="/home/tpreston/.config/hexchat/logs/external codethink/#wi001.log"
+source $HOME/.profile.d/sup
