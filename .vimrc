@@ -13,7 +13,6 @@ execute pathogen#infect()
 filetype plugin indent on
 
 syntax enable
-" for some reason I have to use dark themes in st
 set background=light
 colorscheme solarized
 
