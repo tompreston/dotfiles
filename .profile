@@ -26,5 +26,4 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
-source $HOME/.profile.d/journal
 source $HOME/.profile.d/sup
