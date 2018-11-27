@@ -15,6 +15,8 @@ sudo apt install \
 	exim4 \
 	firmware-iwlwifi \
 	fonts-inconsolata \
+	fonts-nanum \
+	fonts-symbola \
 	git \
 	gnupg2 \
 	hexchat \
