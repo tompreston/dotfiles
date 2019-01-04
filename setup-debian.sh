@@ -20,6 +20,7 @@ sudo apt install \
 	git \
 	gnupg2 \
 	hexchat \
+	moreutils \
 	openssh-server \
 	pass \
 	thunderbird \
