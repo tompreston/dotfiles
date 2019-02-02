@@ -1,11 +1,11 @@
 #!/bin/bash
 # utilities for managing standups
-export SUP_FILE="$HOME/Work/standup.d/ts004.txt"
-export SUP_LOG="/home/tpreston/.config/hexchat/logs/codethink/#sel4.log"
+export SUP_FILE="$HOME/w/standup.d/ts005.txt"
+export SUP_LOG="/home/tpreston/.config/hexchat/logs/codethink/#ts005.log"
 export SUP_AUTHOR="Thomas Preston"
 export SUP_BRANCH="master"
-export SUP_GCODE="co034"
-export SUP_PCODE="SEL4"
+export SUP_GCODE="ts005"
+export SUP_PCODE="kernel"
 export SUP_WIKI_URL="https://gitlab.codethink.co.uk/$SUP_GCODE/$SUP_PCODE/wikis/log/standup_%s"
 
 sup()
@@ -36,7 +36,8 @@ sup_format()
 	cat << EOF
 # Present #
 
-* Jorge Sanjuan (jorgesanjuan)
+* Michael Drake (tlsa)
+* Tom Eccles (ecclescake)
 * Thomas Preston (tpreston)
 
 # Absent #
@@ -81,15 +82,15 @@ sup_commit_push()
 	local suplog=$1
 	local message="$2"
 	if [ -z "$suplog" ]; then
-		echo "usage: $0 standup-log"
-		exit 1
+		echo "usage: sup_commit_push standup-log"
+		return 1
 	fi
 	if [ -z "$message" ]; then
 		message="Add standup log for $(date +%Y-%m-%d)"
 	fi
 	if [ "$(git rev-parse --abbrev-ref HEAD)" != "$SUP_BRANCH" ]; then
 		echo "Not in $SUP_BRANCH branch, aborting."
-		exit 2
+		return 2
 	fi
 	git pull
 	git add $suplog

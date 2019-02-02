@@ -24,7 +24,7 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType css setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 expandtab
 " tab is 2 spaces for the following
-autocmd VimEnter * if @% =~ "Work/standup.d" |
+autocmd VimEnter * if @% =~ "w/standup.d" |
 	\ echom "in standup" | setlocal shiftwidth=2 tabstop=2 expandtab | endif
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
