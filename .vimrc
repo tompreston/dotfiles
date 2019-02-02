@@ -5,7 +5,6 @@
 " $ ls ~/.vim/bundle/
 " file-line
 " vim-bitbake
-" vim-colors-solarized
 " vim-localvimrc
 " vim-sensible
 " vim-surround
@@ -14,7 +13,6 @@ filetype plugin indent on
 
 syntax enable
 set background=light
-colorscheme solarized
 
 " an alternative to setting manually is vim-sleuth
 " tabs in all files are 8 char length actual-tab-tabs (default)
