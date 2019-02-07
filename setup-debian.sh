@@ -14,7 +14,6 @@ sudo apt install \
 	build-essential \
 	exim4 \
 	firmware-iwlwifi \
-	fonts-inconsolata \
 	fonts-nanum \
 	fonts-symbola \
 	git \
