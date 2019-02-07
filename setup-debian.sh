@@ -51,6 +51,5 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 	git clone https://github.com/tpope/vim-sensible.git;
 	git clone https://github.com/tpope/vim-surround.git;
 	git clone https://github.com/bogado/file-line.git;
-	git clone https://github.com/altercation/vim-colors-solarized;
 	git clone https://github.com/embear/vim-localvimrc;
 	git clone https://github.com/kergoth/vim-bitbake)
