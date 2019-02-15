@@ -1,12 +1,13 @@
 #!/bin/bash
 # utilities for managing standups
+GL_URL="https://gitlab.codethink.co.uk"
 export SUP_FILE="$HOME/w/standup.d/ts005.txt"
 export SUP_LOG="/home/tpreston/.config/hexchat/logs/codethink/#ts005.log"
 export SUP_AUTHOR="Thomas Preston"
 export SUP_BRANCH="master"
 export SUP_GCODE="ts005"
 export SUP_PCODE="kernel"
-export SUP_WIKI_URL="https://gitlab.codethink.co.uk/$SUP_GCODE/$SUP_PCODE/wikis/log/standup_%s"
+export SUP_WIKI_URL="$GL_URL/$SUP_GCODE/$SUP_PCODE/wikis/log/standup-%s"
 
 sup()
 {
