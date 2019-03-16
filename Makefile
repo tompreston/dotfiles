@@ -1,6 +1,6 @@
 FILES = .profile.d .tmux.conf .vimrc
 FILES_DEBIAN = .bash_aliases .bashrc .profile
-FILES_FEDORA = .bash_profile
+FILES_FEDORA = .bashrc
 
 .PHONY: install_debian install_fedora export_debian export_fedora
 
