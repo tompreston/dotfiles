@@ -36,6 +36,10 @@ set number
 set colorcolumn=81
 highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 
+" Show leading tabs/spaces and highlight
+set list
+highlight SpecialKey ctermfg=LightGrey
+
 " Highlight trailing spaces
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
