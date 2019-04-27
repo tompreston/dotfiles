@@ -4,3 +4,6 @@
 [submodule "vim/.vim/pack/tpreston/start/file-line"]
 	path = vim/.vim/pack/tpreston/start/file-line
 	url = https://github.com/bogado/file-line.git
+[submodule "vim/.vim/pack/tpreston/start/vim-surround"]
+	path = vim/.vim/pack/tpreston/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
