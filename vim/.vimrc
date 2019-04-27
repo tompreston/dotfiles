@@ -1,14 +1,4 @@
 " Thomas Preston ~/.vimrc
-" Install pathogen:
-" $ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-" 	curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-" $ ls ~/.vim/bundle/
-" file-line
-" vim-bitbake
-" vim-localvimrc
-" vim-sensible
-" vim-surround
-execute pathogen#infect()
 filetype plugin indent on
 
 syntax enable
