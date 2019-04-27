@@ -13,3 +13,6 @@
 [submodule "vim/.vim/pack/tpreston/start/vim-polygot"]
 	path = vim/.vim/pack/tpreston/start/vim-polygot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim/.vim/pack/tpreston/start/vim-bitbake"]
+	path = vim/.vim/pack/tpreston/start/vim-bitbake
+	url = https://github.com/kergoth/vim-bitbake
