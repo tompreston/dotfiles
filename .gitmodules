@@ -1,3 +1,6 @@
 [submodule "vim/.vim/pack/tpreston/start/vim-sensible"]
 	path = vim/.vim/pack/tpreston/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "vim/.vim/pack/tpreston/start/file-line"]
+	path = vim/.vim/pack/tpreston/start/file-line
+	url = https://github.com/bogado/file-line.git
