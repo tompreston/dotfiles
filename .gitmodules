@@ -16,3 +16,6 @@
 [submodule "vim/.vim/pack/tpreston/start/vim-bitbake"]
 	path = vim/.vim/pack/tpreston/start/vim-bitbake
 	url = https://github.com/kergoth/vim-bitbake
+[submodule "libapps"]
+	path = libapps
+	url = https://chromium.googlesource.com/apps/libapps

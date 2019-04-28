@@ -45,3 +45,6 @@ map <F5> :setlocal spell! spelllang=en_gb<CR>
 let g:localvimrc_whitelist=[
 	\'/home/tpreston/Work/co034/sel4-tutorials-manifest',
 \]
+
+" Use OSC 52 to copy to clipboard
+vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
