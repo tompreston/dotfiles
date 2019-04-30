@@ -15,4 +15,6 @@ always forget the contents of:
 
     man bash # /INVOCATIONS
 
-- Do the OSC 52 stuff correctly https://sunaku.github.io/tmux-yank
+- Do the OSC 52 stuff correctly
+    - https://sunaku.github.io/tmux-yank-osc52.html
+    - https://bugzilla.gnome.org/show_bug.cgi?id=795774
