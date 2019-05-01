@@ -46,5 +46,11 @@ let g:localvimrc_whitelist=[
 	\'/home/tpreston/Work/co034/sel4-tutorials-manifest',
 \]
 
-" Use OSC 52 to copy to clipboard
-vmap <C-c> y:call SendViaOSC52(getreg('"'))<cr>
+" Set default clipboard to Ctrl+c type clipboard, which requires:
+"
+"     vim --version | grep clipboard
+"     +clipboard
+"     +xterm_clipboard
+"
+" On Debian, install vim-gnome
+set clipboard=unnamedplus
