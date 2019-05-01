@@ -41,16 +41,11 @@ autocmd BufWinLeave * call clearmatches()
 
 map <F5> :setlocal spell! spelllang=en_gb<CR>
 
-" local vimrc
-let g:localvimrc_whitelist=[
-	\'/home/tpreston/Work/co034/sel4-tutorials-manifest',
-\]
-
-" Set default clipboard to Ctrl+c type clipboard, which requires:
+" Set default clipboard to Ctrl+c type clipboard, which requires +clipboard
 "
+"     sudo apt install vim-gnome
+"     sudo dnf install vim-X11
+"     brew install vim
 "     vim --version | grep clipboard
-"     +clipboard
-"     +xterm_clipboard
 "
-" On Debian, install vim-gnome
 set clipboard=unnamedplus
