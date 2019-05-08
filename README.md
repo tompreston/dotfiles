@@ -14,3 +14,8 @@ which .bashrc .profile files to use for each distro, for crying out loud [1]. I
 always forget the contents of:
 
     man bash # /INVOCATIONS
+
+Some handy examples in:
+
+    sudo apt install bash-doc
+    less /usr/share/doc/bash/examples/startup-files/README
