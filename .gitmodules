@@ -25,3 +25,6 @@
 [submodule "tmux/.tmux/plugins/tmux-pain-control"]
 	path = tmux/.tmux/plugins/tmux-pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control
+[submodule "tmux/.tmux/plugins/tmux-battery"]
+	path = tmux/.tmux/plugins/tmux-battery
+	url = https://github.com/tmux-plugins/tmux-battery
