@@ -1,29 +1,36 @@
-setup_git_completion()
+# Thomas Preston's macOS bash_profile
+# Note: PATH is set by /usr/libexec/path_helper `man path_helper`
+
+bash_aliases()
+{
+	declare -r ba=~/.bash_aliases
+
+	if [ -f $ba ]; then
+	    source $ba
+	fi
+}
+
+bash_completion()
+{
+	declare -r bc=/usr/local/etc/bash_completion
+
+	if [ -f $bc ]; then
+		source $bc
+	fi
+}
+
+# temporary while brew is fixed
+git_completion()
 {
 	source ~/.git-completion-v2.17.2.bash
 }
 
-# PATH update
-pupdate()
+ps1()
 {
-	case ":${PATH:=$1}:" in
-	*:$1:*) ;;
-	*) PATH="$1:$PATH" ;;
-	esac;
+	export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
 }
 
-if [ -f /usr/local/etc/bash_completion ]; then
-	source /usr/local/etc/bash_completion
-fi
-
-export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
-
-pupdate /Users/tom/Library/Python/3.7/bin
-pupdate /usr/local/sbin
-pupdate /usr/local/bin
-
-setup_git_completion
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+bash_aliases
+bash_completion
+git_completion
+ps1
