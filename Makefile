@@ -1,7 +1,7 @@
 .PHONY: debian fedora macos
 
 common:
-	stow tmux vim
+	stow bash-common tmux vim
 
 debian: common
 	stow bash-debian
