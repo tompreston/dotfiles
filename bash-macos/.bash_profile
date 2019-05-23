@@ -16,3 +16,7 @@ export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
 pupdate /Users/tom/Library/Python/3.7/bin
 pupdate /usr/local/sbin
 pupdate /usr/local/bin
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
