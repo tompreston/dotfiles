@@ -19,12 +19,6 @@ bash_completion()
 	fi
 }
 
-# temporary while brew is fixed
-git_completion()
-{
-	source ~/.git-completion-v2.17.2.bash
-}
-
 ps1()
 {
 	export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
@@ -32,5 +26,4 @@ ps1()
 
 bash_aliases
 bash_completion
-git_completion
 ps1
