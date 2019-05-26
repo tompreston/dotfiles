@@ -48,4 +48,8 @@ map <F5> :setlocal spell! spelllang=en_gb<CR>
 "     brew install vim
 "     vim --version | grep clipboard
 "
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed
+else
+  set clipboard=unnamedplus
+endif
