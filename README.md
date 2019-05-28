@@ -19,3 +19,7 @@ Some handy examples in:
 
     sudo apt install bash-doc
     less /usr/share/doc/bash/examples/startup-files/README
+
+Also, start using the properly maintained:
+- neovim
+- universal-ctags
