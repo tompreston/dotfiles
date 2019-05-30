@@ -1,3 +1,5 @@
+set background=light
+
 " Show line numbers
 set number
 
