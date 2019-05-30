@@ -28,3 +28,9 @@
 [submodule "tmux/.tmux/plugins/tmux-open"]
 	path = tmux/.tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
+[submodule "local/share/nvim/site/pack/tpreston/start/vim-polygot"]
+	path = local/share/nvim/site/pack/tpreston/start/vim-polygot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "local/share/nvim/site/pack/tpreston/start/vim-fetch"]
+	path = local/share/nvim/site/pack/tpreston/start/vim-fetch
+	url = https://github.com/wsdjeg/vim-fetch
