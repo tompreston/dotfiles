@@ -4,4 +4,5 @@ dnf install \
 	moreutils \
 	nvim \
 	pass \
-	thunderbird
+	thunderbird \
+	weechat

@@ -12,4 +12,5 @@ apt install \
 	openssh-server \
 	pass \
 	thunderbird \
-	tmux
+	tmux \
+	weechat
