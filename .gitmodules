@@ -1,18 +1,3 @@
-[submodule "vim/.vim/pack/tpreston/start/vim-sensible"]
-	path = vim/.vim/pack/tpreston/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-[submodule "vim/.vim/pack/tpreston/start/file-line"]
-	path = vim/.vim/pack/tpreston/start/file-line
-	url = https://github.com/bogado/file-line.git
-[submodule "vim/.vim/pack/tpreston/start/vim-surround"]
-	path = vim/.vim/pack/tpreston/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/.vim/pack/tpreston/start/vim-localvimrc"]
-	path = vim/.vim/pack/tpreston/start/vim-localvimrc
-	url = https://github.com/embear/vim-localvimrc.git
-[submodule "vim/.vim/pack/tpreston/start/vim-polygot"]
-	path = vim/.vim/pack/tpreston/start/vim-polygot
-	url = https://github.com/sheerun/vim-polyglot
 [submodule "tmux/.tmux/plugins/tmux-sensible"]
 	path = tmux/.tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
