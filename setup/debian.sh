@@ -9,8 +9,8 @@ apt install \
 	gnupg2 \
 	hexchat \
 	moreutils \
+	nvim \
 	openssh-server \
 	pass \
 	thunderbird \
-	tmux \
-	vim
+	tmux
