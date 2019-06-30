@@ -5,4 +5,3 @@ alias l='ls -CF'
 
 # nvim
 alias vim="nvim"
-alias e="$EDITOR"
