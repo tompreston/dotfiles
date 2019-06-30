@@ -13,13 +13,8 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-export EDITOR="vim"
+export EDITOR="nvim"
 export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
-
-alias gs='git status'
-alias gd='git diff'
-alias ga='git add'
-alias gl='git log'
 
 #source $HOME/.profile.d/journal.env
 #source $HOME/.profile.d/sup
