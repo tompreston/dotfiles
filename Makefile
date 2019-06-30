@@ -1,15 +1,16 @@
 .PHONY: common debian fedora macos
 
 common:
-	stow bash-common tmux vim
-	stow config --target ../.config
-	stow local --target ../.local
+	stow --target ../.config config
+	stow --target ../.local local
+	stow --dir bash --target .. common
+	stow tmux vim
 
 debian: common
-	stow bash-debian
+	stow --dir bash --target .. debian
 
 fedora: common
-	stow bash-fedora
+	stow --dir bash --target .. fedora
 
 macos: common
-	stow bash-macos
+	stow --dir bash --target .. macos
