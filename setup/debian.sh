@@ -7,7 +7,6 @@ apt install \
 	fonts-symbola \
 	git \
 	gnupg2 \
-	hexchat \
 	moreutils \
 	nvim \
 	openssh-server \
