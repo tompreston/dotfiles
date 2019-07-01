@@ -22,6 +22,6 @@ fi
 
 export EDITOR="nvim"
 export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
+export SUP_FILE="$HOME/w/standup/ts005.txt"
 
 source $HOME/journal/journal.env
-#source $HOME/.profile.d/sup

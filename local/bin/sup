@@ -1,0 +1,48 @@
+#!/bin/bash
+# View/edit standup notes
+
+pr_usage()
+{
+	echo "usage: sup"
+	echo "       sup show d"
+	echo "       sup show tom"
+	echo "       sup format"
+}
+
+pr_err()
+{
+	>&2 echo "Error: $*"
+}
+
+edit()
+{
+	$EDITOR "$SUP_FILE"
+}
+
+# Print the standup file and append the next engineers name.
+show()
+{
+	declare -r name="$1"
+
+	if [ -z "$name" ]; then
+		pr_usage
+		return 1
+	fi
+
+	cat "$SUP_FILE"
+	grep -i "# $name" "$SUP_FILE"
+}
+
+if ! [ -f "$SUP_FILE" ]; then
+	pr_err "Could not find $SUP_FILE"
+	return 1
+fi
+
+case "$1" in
+"show")
+	show "$2"
+	;;
+*)
+	edit
+	;;
+esac
