@@ -1,8 +1,16 @@
 #!/bin/bash
+# Install packages in Fedora 30.
 dnf install \
-	@developer-tools \
+	autoconf \
+	automake \
+	libtool \
+	gnome-tweak-tool \
+	make \
 	moreutils \
-	nvim \
+	ncurses-term \
+	neovim \
 	pass \
+	pipenv \
+	stow \
 	thunderbird \
 	weechat
