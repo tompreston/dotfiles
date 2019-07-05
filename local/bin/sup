@@ -33,12 +33,24 @@ show()
 	grep -i "# $name" "$SUP_FILE"
 }
 
+format()
+{
+	echo "TODO"
+}
+
 if ! [ -f "$SUP_FILE" ]; then
 	pr_err "Could not find $SUP_FILE"
-	return 1
+	exit 1
+fi
+if ! [ -f "$SUP_LOG" ]; then
+	pr_err "Could not find $SUP_LOG"
+	exit 1
 fi
 
 case "$1" in
+"format")
+	format
+	;;
 "show")
 	show "$2"
 	;;
