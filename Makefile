@@ -1,6 +1,7 @@
 .PHONY: common debian fedora macos
 
 common:
+	stow --adopt --target ../.weechat weechat
 	stow --target ../.config config
 	stow --target ../.local local
 	stow --dir bash --target .. common
