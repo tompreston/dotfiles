@@ -4,7 +4,10 @@ dnf install \
 	autoconf \
 	automake \
 	libtool \
+	ftp \
 	gnome-tweak-tool \
+	graphviz \
+	ImageMagick \
 	make \
 	moreutils \
 	ncurses-term \
