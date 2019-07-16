@@ -1,20 +1,26 @@
 #!/bin/bash
 # Install packages in Fedora 30.
 dnf install \
-	@development-tools \
 	autoconf \
 	automake \
 	ccache \
-	libtool \
+	@development-tools \
+	elfutils-libelf-devel \
+	fedpkg \
 	ftp \
+	gcc \
+	git \
 	gnome-tweak-tool \
 	graphviz \
 	ImageMagick \
+	kernel-devel \
+	libtool \
 	make \
-	moreutils \
 	minicom \
+	moreutils \
 	ncurses-term \
 	neovim \
+	openssl-devel \
 	pass \
 	pipenv \
 	stow \
