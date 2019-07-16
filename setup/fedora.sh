@@ -10,6 +10,7 @@ dnf install \
 	ImageMagick \
 	make \
 	moreutils \
+	minicom \
 	ncurses-term \
 	neovim \
 	pass \
