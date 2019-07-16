@@ -3,10 +3,12 @@
 dnf install \
 	autoconf \
 	automake \
+	bison \
 	ccache \
 	@development-tools \
 	elfutils-libelf-devel \
 	fedpkg \
+	flex \
 	ftp \
 	gcc \
 	git \
