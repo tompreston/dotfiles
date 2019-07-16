@@ -1,6 +1,7 @@
 #!/bin/bash
 # Install packages in Fedora 30.
 dnf install \
+	@development-tools \
 	autoconf \
 	automake \
 	ccache \
