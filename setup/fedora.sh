@@ -3,6 +3,7 @@
 dnf install \
 	autoconf \
 	automake \
+	ccache \
 	libtool \
 	ftp \
 	gnome-tweak-tool \
