@@ -3,15 +3,18 @@
 dnf install \
 	autoconf \
 	automake \
+	asciidoc \
 	bison \
 	ccache \
 	@development-tools \
 	elfutils-libelf-devel \
+	elfutils-libelf-devel-static \
 	fedpkg \
 	flex \
 	ftp \
 	gcc \
 	git \
+	glibc-static \
 	gnome-tweak-tool \
 	graphviz \
 	ImageMagick \
@@ -23,8 +26,14 @@ dnf install \
 	ncurses-term \
 	neovim \
 	openssl-devel \
+	openssl-static \
 	pass \
 	pipenv \
+	ShellCheck \
 	stow \
+	strace \
 	thunderbird \
-	weechat
+	weechat \
+	xmlto \
+	zlib-devel \
+	zlib-static
