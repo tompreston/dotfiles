@@ -23,7 +23,7 @@ fi
 export EDITOR="nvim"
 export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
 
-export SUP_FILE="$HOME/w/standup/ts005.txt"
-export SUP_LOG="$HOME/.weechat/logs/irc.codethink.#ts005.weechatlog"
+export SUP_DIR="$HOME/w/standup"
+export SUP_LOG_DIR="$HOME/.weechat/logs"
 
 source "$HOME/journal/journal.env"

@@ -3,10 +3,11 @@
 
 pr_usage()
 {
-	echo "usage: sup"
-	echo "       sup show d"
-	echo "       sup show tom"
-	echo "       sup format"
+	echo "usage: sup ts005 # edit"
+	echo "       sup edit ts005"
+	echo "       sup show ts005 d"
+	echo "       sup show ts005 tom"
+	echo "       sup format ts005"
 }
 
 pr_err()
@@ -14,23 +15,47 @@ pr_err()
 	>&2 echo "Error: $*"
 }
 
+check_env_or_die()
+{
+	if ! [ -d "$SUP_DIR" ]; then
+		pr_err "Could not find $SUP_DIR"
+		exit 1
+	fi
+	if ! [ -d "$SUP_LOG_DIR" ]; then
+		pr_err "Could not find $SUP_LOG_DIR"
+		exit 1
+	fi
+
+}
+
+pr_sup_file_path()
+{
+	declare -r group="$1"
+	declare -r sup_file="$SUP_DIR/${group}.txt"
+
+	echo "$sup_file"
+}
+
 edit()
 {
-	$EDITOR "$SUP_FILE"
+	declare -r group="$1"
+
+	"$EDITOR" "$(pr_sup_file_path "$group")"
 }
 
 # Print the standup file and append the next engineers name.
 show()
 {
-	declare -r name="$1"
+	declare -r group="$1" name="$2"
+	declare -r sup_file_path="$(pr_sup_file_path "$group")"
 
 	if [ -z "$name" ]; then
 		pr_usage
 		return 1
 	fi
 
-	cat "$SUP_FILE"
-	grep -i "# $name" "$SUP_FILE"
+	cat "$sup_file_path"
+	grep -i "# $name" "$sup_file_path"
 }
 
 format()
@@ -38,23 +63,24 @@ format()
 	echo "TODO"
 }
 
-if ! [ -f "$SUP_FILE" ]; then
-	pr_err "Could not find $SUP_FILE"
+if [ $# -lt 1 ]; then
+	pr_err "Need at least 1 arg"
+	pr_usage
 	exit 1
 fi
-if ! [ -f "$SUP_LOG" ]; then
-	pr_err "Could not find $SUP_LOG"
-	exit 1
-fi
+check_env_or_die
 
 case "$1" in
 "format")
 	format
 	;;
 "show")
-	show "$2"
+	show "$2" "$3"
+	;;
+"edit")
+	edit "$2"
 	;;
 *)
-	edit
+	edit "$1"
 	;;
 esac
