@@ -18,11 +18,11 @@ pr_err()
 check_env_or_die()
 {
 	if ! [ -d "$SUP_DIR" ]; then
-		pr_err "Could not find $SUP_DIR"
+		pr_err "Could not find SUP_DIR"
 		exit 1
 	fi
 	if ! [ -d "$SUP_LOG_DIR" ]; then
-		pr_err "Could not find $SUP_LOG_DIR"
+		pr_err "Could not find SUP_LOG_DIR"
 		exit 1
 	fi
 
