@@ -1,5 +1,7 @@
 #!/bin/bash
 # utilities for managing standups
+# DEPRECATED use ~/.local/bin/sup instead
+exit 1
 GL_URL="https://gitlab.codethink.co.uk"
 export SUP_FILE="$HOME/w/standup.d/ts005.txt"
 export SUP_LOG="/home/tpreston/.config/hexchat/logs/codethink/#ts005.log"
