@@ -31,7 +31,7 @@ check_env_or_die()
 pr_sup_file_path()
 {
 	declare -r group="$1"
-	declare -r sup_file="$SUP_DIR/${group}.txt"
+	declare -r sup_file="$SUP_DIR/${group}.md"
 
 	echo "$sup_file"
 }
