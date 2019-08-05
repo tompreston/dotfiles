@@ -1,5 +1,6 @@
 #!/bin/bash
 # Install packages in Fedora 30.
+# TODO turn this into an ansible playbook or something
 dnf install \
 	autoconf \
 	automake \
