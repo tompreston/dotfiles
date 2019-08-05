@@ -33,6 +33,7 @@ dnf install \
 	stow \
 	strace \
 	thunderbird \
+	vim-common \
 	weechat \
 	xmlto \
 	zlib-devel \
