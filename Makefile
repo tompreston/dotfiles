@@ -5,7 +5,7 @@ common:
 	stow --target ../.config config
 	stow --target ../.local local
 	stow --dir bash --target .. common
-	stow tmux
+	stow git tmux
 
 debian: common
 	stow --dir bash --target .. debian

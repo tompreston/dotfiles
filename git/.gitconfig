@@ -1,0 +1,15 @@
+[user]
+	name = Thomas Preston
+	email = thomas.preston@codethink.co.uk
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	di = diff
+[sendemail]
+	smtpencryption = ssl
+	smtpserver = mail.codethink.co.uk
+	smtpserverport = 465
+	smtpuser = thomaspreston
+	from = Thomas Preston <thomas.preston@codethink.co.uk>
