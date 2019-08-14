@@ -1,0 +1,8 @@
+[user]
+	email = thomas.preston@codethink.co.uk
+[sendemail]
+	smtpencryption = ssl
+	smtpserver = mail.codethink.co.uk
+	smtpserverport = 465
+	smtpuser = thomaspreston
+	from = Thomas Preston <thomas.preston@codethink.co.uk>

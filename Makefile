@@ -5,6 +5,7 @@ common:
 	stow --target ../.config config
 	stow --target ../.local local
 	stow --dir bash --target .. common
+	stow --target ../w git-work
 	stow git tmux
 
 debian: common
