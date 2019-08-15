@@ -1,4 +1,13 @@
 # .bashrc
+# Run when an interactive shell that is not a login shell executes.
+# When a login shell executes .bash_profile is read first.
+# Source this file in .bash_profile
+# See `man bash` /INVOCATIONS
+
+is_macos()
+{
+	test "$(uname -s)" = "Darwin"
+}
 
 # include if file exists
 include()
@@ -21,6 +30,9 @@ pathadd()
 include "/etc/bashrc"
 include "$HOME/.bash_aliases"
 include "$HOME/journal/journal.env"
+if is_macos; then
+	include "/usr/local/etc/bash_completion"
+fi
 
 pathadd "$HOME/.local/bin"
 
