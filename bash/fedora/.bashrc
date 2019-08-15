@@ -27,4 +27,7 @@ export EDITOR="nvim"
 export SUP_DIR="$HOME/w/standup"
 export SUP_LOG_DIR="$HOME/.weechat/logs"
 
-source "$HOME/journal/journal.env"
+declare -r JENV="$HOME/journal/journal.env"
+if [ -f "$JENV" ]; then
+	source "$JENV"
+fi
