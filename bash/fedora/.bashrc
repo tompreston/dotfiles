@@ -20,8 +20,9 @@ if [ -f "$HOME/.bash_aliases" ]; then
 	source "$HOME/.bash_aliases"
 fi
 
+export PS1='\w\[\033[33m\]\$\[\033[0m\] '
+
 export EDITOR="nvim"
-export PS1='\u:\w\[\033[33m\]\$\[\033[0m\] '
 
 export SUP_DIR="$HOME/w/standup"
 export SUP_LOG_DIR="$HOME/.weechat/logs"
