@@ -27,6 +27,16 @@ pathadd()
 	fi
 }
 
+ps1()
+{
+	# Only set PS1 on the following machines
+	case "$(hostname)" in
+	"tomp-mbp.mynet"|"ct-lt-0xxxx")
+		export PS1='\w\[\033[33m\]\$\[\033[0m\] '
+		;;
+	esac
+}
+
 include "/etc/bashrc"
 include "$HOME/.bash_aliases"
 include "$HOME/journal/journal.env"
@@ -36,7 +46,8 @@ fi
 
 pathadd "$HOME/.local/bin"
 
-export PS1='\w\[\033[33m\]\$\[\033[0m\] '
+ps1
+
 export EDITOR="nvim"
 export SUP_DIR="$HOME/w/standup"
 export SUP_LOG_DIR="$HOME/.weechat/logs"
