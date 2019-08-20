@@ -31,7 +31,7 @@ ps1()
 {
 	# Only set PS1 on the following machines
 	case "$(hostname)" in
-	"tomp-mbp.mynet"|"ct-lt-0xxxx")
+	"tomp-mbp.mynet"|"ct-lt-1124")
 		export PS1='\w\[\033[33m\]\$\[\033[0m\] '
 		;;
 	esac
