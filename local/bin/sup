@@ -8,6 +8,7 @@ pr_usage()
 	echo "       sup show ts005 d"
 	echo "       sup show ts005 tom"
 	echo "       sup format ts005"
+	echo "       sup new ct001"
 }
 
 pr_err()
@@ -63,6 +64,25 @@ format()
 	echo "TODO"
 }
 
+new()
+{
+	declare -r group="$1"
+	declare -r sup_file_path="$(pr_sup_file_path "$group")"
+
+	cat > "$sup_file_path" <<EOF
+# Standup Notes $group
+## Thomas Preston (tpreston)
+# Discussion
+
+## Thomas Preston (tpreston)
+* Done:
+* Doing:
+* Next:
+* Backlog:
+EOF
+	edit "$group"
+}
+
 if [ $# -lt 1 ]; then
 	pr_err "Need at least 1 arg"
 	pr_usage
@@ -76,6 +96,9 @@ case "$1" in
 	;;
 "format")
 	format
+	;;
+"new")
+	new "$2"
 	;;
 "show")
 	show "$2" "$3"
