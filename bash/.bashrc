@@ -49,6 +49,9 @@ pathadd "$HOME/.local/bin"
 ps1
 
 export EDITOR="nvim"
+# Don't use stow-symlinks with weechat config, just point right at it. This is
+# because Docker can't see outside of the volume, so the symlinks break.
+export WEECHAT_HOME="$HOME/.dotfiles/weechat"
 export SUP_DIR="$HOME/w/standup"
 export SUP_LOG_DIR="$HOME/.weechat/logs"
 

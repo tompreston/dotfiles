@@ -1,3 +1,6 @@
-.profile.d/journal.env
 config/nvim/.netrwhist
 local/share/nvim/shada/main.shada
+.profile.d/journal.env
+weechat/logs
+weechat/sec.conf
+weechat/weechat.log
