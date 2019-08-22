@@ -71,14 +71,14 @@ fi
 check_env_or_die
 
 case "$1" in
+"edit")
+	edit "$2"
+	;;
 "format")
 	format
 	;;
 "show")
 	show "$2" "$3"
-	;;
-"edit")
-	edit "$2"
 	;;
 *)
 	edit "$1"
