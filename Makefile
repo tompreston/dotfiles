@@ -3,5 +3,5 @@
 install:
 	stow --target ../.config config
 	stow --target ../.local local
-	stow --target ../w git-work
-	stow bash git tmux
+	stow --dotfiles --target ../w git-work
+	stow --dotfiles bash git tmux
