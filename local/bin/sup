@@ -37,6 +37,7 @@ pr_sup_file_path()
 	echo "$sup_file"
 }
 
+# Edit standup notes for project group
 edit()
 {
 	declare -r pcode="$1"
@@ -59,11 +60,13 @@ show()
 	grep -i "# $name" "$sup_file_path"
 }
 
+# Scrape standup notes from this groups IRC log
 format()
 {
 	echo "TODO"
 }
 
+# Create new standup notes for project group
 new()
 {
 	declare -r pcode="$1"
