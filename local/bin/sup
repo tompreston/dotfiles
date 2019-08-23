@@ -31,24 +31,24 @@ check_env_or_die()
 
 pr_sup_file_path()
 {
-	declare -r group="$1"
-	declare -r sup_file="$SUP_DIR/${group}.md"
+	declare -r pcode="$1"
+	declare -r sup_file="$SUP_DIR/${pcode}.md"
 
 	echo "$sup_file"
 }
 
 edit()
 {
-	declare -r group="$1"
+	declare -r pcode="$1"
 
-	"$EDITOR" "$(pr_sup_file_path "$group")"
+	"$EDITOR" "$(pr_sup_file_path "$pcode")"
 }
 
 # Print the standup file and append the next engineers name.
 show()
 {
-	declare -r group="$1" name="$2"
-	declare -r sup_file_path="$(pr_sup_file_path "$group")"
+	declare -r pcode="$1" name="$2"
+	declare -r sup_file_path="$(pr_sup_file_path "$pcode")"
 
 	if [ -z "$name" ]; then
 		pr_usage
@@ -66,11 +66,11 @@ format()
 
 new()
 {
-	declare -r group="$1"
-	declare -r sup_file_path="$(pr_sup_file_path "$group")"
+	declare -r pcode="$1"
+	declare -r sup_file_path="$(pr_sup_file_path "$pcode")"
 
 	cat > "$sup_file_path" <<EOF
-# Standup Notes $group
+# Standup Notes $pcode
 ## Thomas Preston (tpreston)
 # Discussion
 
@@ -80,7 +80,7 @@ new()
 * Next:
 * Backlog:
 EOF
-	edit "$group"
+	edit "$pcode"
 }
 
 if [ $# -lt 1 ]; then
