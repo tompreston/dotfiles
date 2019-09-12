@@ -7,7 +7,8 @@ weechat_fedora()
 	declare -r weechat_home="$HOME/.dotfiles/weechat"
 
 	podman run -it --mount type=bind,src="$weechat_home",dst=/weechat \
-		tompreston/weechat
+		--env=TERM \
+		tompreston/weechat "$@"
 }
 
 weechat_macos()
@@ -16,7 +17,7 @@ weechat_macos()
 }
 
 if [ "$(uname -s)" = "Darwin" ]; then
-	weechat_macos
+	weechat_macos "$@"
 else
-	weechat_fedora
+	weechat_fedora "$@"
 fi
