@@ -16,6 +16,10 @@ weechat_macos()
 	echo "TODO"
 }
 
+if [ -n "$TMUX" ]; then
+	tmux rename-window "weechat"
+fi
+
 if [ "$(uname -s)" = "Darwin" ]; then
 	weechat_macos "$@"
 else
