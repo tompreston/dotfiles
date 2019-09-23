@@ -63,7 +63,26 @@ show()
 # Scrape standup notes from this groups IRC log
 format()
 {
-	echo "TODO"
+	declare -r pcode="$1"
+	declare -r weechatlog="$SUP_LOG_DIR/irc.codethink.#${pcode}.weechatlog"
+	declare tmplog
+
+	if [ -z "$pcode" ]; then
+		pr_usage
+		return 1
+	fi
+	if [ ! -f "$weechatlog" ]; then
+		pr_err "$weechatlog does not exist"
+		return 1
+	fi
+
+	tmplog=$(mktemp "/tmp/sup-format-${pcode}-XXXXXX.txt")
+
+	# Reverse the log and print until we find standup master
+	tac "$weechatlog" | awk '
+		BEGIN { relevant=1 };
+		relevant { print $0 };
+		/## Thomas Preston/ { relevant=0 }' | tac
 }
 
 # Create new standup notes for project group
@@ -98,7 +117,7 @@ case "$1" in
 	edit "$2"
 	;;
 "format")
-	format
+	format "$2"
 	;;
 "new")
 	new "$2"
