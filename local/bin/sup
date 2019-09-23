@@ -3,12 +3,12 @@
 
 pr_usage()
 {
-	echo "usage: sup ts005 # edit"
-	echo "       sup edit ts005"
-	echo "       sup show ts005 d"
-	echo "       sup show ts005 tom"
-	echo "       sup format ts005"
-	echo "       sup new ct001"
+	echo "usage: sup PCODE # edit"
+	echo "       sup edit PCODE"
+	echo "       sup show PCODE d"
+	echo "       sup show PCODE tom"
+	echo "       sup format PCODE"
+	echo "       sup new PCODE_NEW"
 }
 
 pr_err()
