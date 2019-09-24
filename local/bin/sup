@@ -78,11 +78,21 @@ format()
 
 	tmplog=$(mktemp "/tmp/sup-format-${pcode}-XXXXXX.txt")
 
-	# Reverse the log and print until we find standup master
-	tac "$weechatlog" | awk '
-		BEGIN { relevant=1 };
-		relevant { print $0 };
-		/## Thomas Preston/ { relevant=0 }' | tac
+	# Reverse the log and print until we find standup master (me)
+	tac "$weechatlog" |
+		awk 'BEGIN { relevant=1 };
+			relevant { print $0 };
+			/## Thomas Preston/ { relevant=0 }' |
+	# Reverse again and format the notes
+		tac |
+		awk -F"\t" 'BEGIN { discussion=0 };
+			!discussion { print $3 };
+			/# Discussion/ { discussion=1 };
+			discussion { print $2,$3 }' |
+		tee "$tmplog"
+
+	# print the $EDITOR command to stderr for convenience
+	>&2 echo "$EDITOR $tmplog"
 }
 
 # Create new standup notes for project group
