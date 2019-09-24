@@ -49,7 +49,9 @@ edit()
 show()
 {
 	declare -r pcode="$1" name="$2"
-	declare -r sup_file_path="$(pr_sup_file_path "$pcode")"
+	declare sup_file_path
+
+	sup_file_path="$(pr_sup_file_path "$pcode")"
 
 	if [ -z "$name" ]; then
 		pr_usage
@@ -99,7 +101,9 @@ format()
 new()
 {
 	declare -r pcode="$1"
-	declare -r sup_file_path="$(pr_sup_file_path "$pcode")"
+	declare sup_file_path
+
+	sup_file_path="$(pr_sup_file_path "$pcode")"
 
 	cat > "$sup_file_path" <<EOF
 # Standup Notes $pcode
