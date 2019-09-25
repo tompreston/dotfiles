@@ -88,9 +88,24 @@ format()
 	# Reverse again and format the notes
 		tac |
 		awk -F"\t" 'BEGIN { discussion=0 };
+
+			# Add a one-line gap before engnieer headers
+			# note: !discussion actually prints engineer
+			$3~/^## / { print "" };
+
+			# Surround Discussion header with one-line gaps
+			$3~/^# Discussion/ {
+				discussion=1;
+				print "";
+				print $3;
+				print ""
+			};
+
+			# Print notes without timestamps or usernames
 			!discussion { print $3 };
-			/# Discussion/ { discussion=1 };
-			discussion { print $2,$3 }' |
+
+			# Print discussion without timestamps, with usernames
+			discussion { print "    ",$2,$3 }' |
 		tee "$tmplog"
 
 	# print the $EDITOR command to stderr for convenience
