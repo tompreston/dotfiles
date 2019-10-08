@@ -1,3 +1,7 @@
+# On Debian, ls and grep aren't compiled with colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 # ls
 alias ll='ls -l'
 alias la='ls -A'
