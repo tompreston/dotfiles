@@ -56,9 +56,19 @@ ps1()
 include "/etc/bashrc"
 include "$HOME/.bash_aliases"
 include "$HOME/journal/journal.env"
+
 if is_macos; then
 	include "/usr/local/etc/bash_completion"
+	alias ls="ls -G"
+else
+	alias ls="ls --color=auto"
 fi
+
+alias grep="grep --color=auto"
+alias l="ls -CF"
+alias la="ls -A"
+alias ll="ls -l"
+alias vim="nvim"
 
 pathadd "$HOME/.local/bin"
 
