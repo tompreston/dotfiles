@@ -1,19 +1,20 @@
 #!/bin/bash
 # Start the weechat container. I prefer to run weechat in a container so that I
 # can maintain config versions between Fedora/macOS.
+WEECHAT_HOME="$HOME/.dotfiles/weechat"
 
 weechat_fedora()
 {
-	declare -r weechat_home="$HOME/.dotfiles/weechat"
-
-	podman run -it --mount type=bind,src="$weechat_home",dst=/weechat \
+	podman run -it --mount type=bind,src="$WEECHAT_HOME",dst=/weechat \
 		--env=TERM \
 		tompreston/weechat "$@"
 }
 
 weechat_macos()
 {
-	echo "TODO"
+	docker run -it --mount type=bind,src="$WEECHAT_HOME",dst=/weechat \
+		--env=TERM \
+		tompreston/weechat "$@"
 }
 
 if [ -n "$TMUX" ]; then
