@@ -5,7 +5,7 @@ set number
 
 " Draw a ruler
 set colorcolumn=81
-highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+highlight ColorColumn ctermbg=LightGrey ctermfg=DarkRed
 
 " Show leading tabs/spaces
 set list
