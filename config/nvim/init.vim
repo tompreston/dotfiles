@@ -3,9 +3,12 @@ set background=light
 " Show line numbers
 set number
 
+" let vim-find search all sub directories
+set path+=**
+
 " Draw a ruler
 set colorcolumn=81
-highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+highlight ColorColumn ctermbg=LightGrey ctermfg=DarkRed
 
 " Show leading tabs/spaces
 set list
