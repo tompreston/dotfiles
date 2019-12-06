@@ -85,7 +85,7 @@ alias vim="nvim"
 
 pathadd "$HOME/.local/bin"
 
-ctags
+setup_ctags
 ps1
 
 export EDITOR="nvim"
@@ -97,3 +97,6 @@ export SUP_DIR="$HOME/w/standup"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
+
+# debug xsel
+export PATH="$HOME/.local/bin:$PATH"
