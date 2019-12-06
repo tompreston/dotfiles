@@ -5,6 +5,9 @@
 # Source this file in .bash_profile
 # See `man bash` /INVOCATIONS
 
+HOSTNAME_CT_LT="ct-lt-1124"
+HOSTNAME_MBP="tomp-mbp.mynet"
+
 is_macos()
 {
 	test "$(uname -s)" = "Darwin"
@@ -34,7 +37,7 @@ ps1()
 
 	# Custom PS1 for the following machines
 	case "$(hostname)" in
-	"tomp-mbp.mynet"|"ct-lt-1124")
+	"$HOSTNAME_MBP"|"$HOSTNAME_CT_LT")
 		PS1='\w\[\033[33m\]\$\[\033[0m\] '
 		return
 		;;
@@ -51,6 +54,16 @@ ps1()
 	else
 		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 	fi
+}
+
+setup_ctags()
+{
+	case "$(hostname)" in
+	"$HOSTNAME_CT_LT")
+		alias ctags="/var/lib/snapd/snap/bin/universal-ctags"
+		return
+		;;
+	esac
 }
 
 include "/etc/bashrc"
@@ -72,6 +85,7 @@ alias vim="nvim"
 
 pathadd "$HOME/.local/bin"
 
+ctags
 ps1
 
 export EDITOR="nvim"
