@@ -8,6 +8,7 @@ pr_usage()
 	echo "       sup show PCODE d"
 	echo "       sup show PCODE tom"
 	echo "       sup format PCODE"
+	echo "       sup push LOG_PATH"
 	echo "       sup new PCODE_NEW"
 }
 
@@ -112,6 +113,27 @@ format()
 	>&2 echo "$EDITOR $tmplog"
 }
 
+# push a standup log
+push()
+{
+	declare log_path="$(realpath "$1")"
+	declare log_file="$(basename "$log_path")"
+	declare log_dir="$(dirname "$log_path")"
+
+	if [ ! -e "$log_path" ]; then
+		pr_err "$log_path does not exist"
+		exit 1
+	fi
+
+	(set -e
+		cd "$log_dir"
+		git pull
+		git add "$log_path"
+		git commit -m "Add $log_file"
+		git push)
+
+}
+
 # Create new standup notes for project group
 new()
 {
@@ -147,6 +169,9 @@ case "$1" in
 	;;
 "format")
 	format "$2"
+	;;
+"push")
+	push "$2"
 	;;
 "new")
 	new "$2"
