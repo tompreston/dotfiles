@@ -33,12 +33,17 @@ pathadd()
 
 ps1()
 {
-	declare color_prompt
+	declare color_prompt debian_chroot
+
+	# set variable identifying the chroot you work in
+	if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+		debian_chroot=$(cat /etc/debian_chroot)
+	fi
 
 	# Custom PS1 for the following machines
 	case "$(hostname)" in
 	"$HOSTNAME_MBP"|"$HOSTNAME_CT_LT")
-		PS1='\w\[\033[33m\]\$\[\033[0m\] '
+		PS1='${debian_chroot:+($debian_chroot)}\w\[\033[33m\]\$\[\033[0m\] '
 		return
 		;;
 	esac
