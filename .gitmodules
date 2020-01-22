@@ -1,16 +1,16 @@
-[submodule "tmux/.tmux/plugins/tmux-sensible"]
+[submodule "tmux/dot-tmux/plugins/tmux-sensible"]
 	path = tmux/dot-tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
-[submodule "tmux/.tmux/plugins/tmux-yank"]
+[submodule "tmux/dot-tmux/plugins/tmux-yank"]
 	path = tmux/dot-tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
-[submodule "tmux/.tmux/plugins/tmux-pain-control"]
+[submodule "tmux/dot-tmux/plugins/tmux-pain-control"]
 	path = tmux/dot-tmux/plugins/tmux-pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control
-[submodule "tmux/.tmux/plugins/tmux-battery"]
+[submodule "tmux/dot-tmux/plugins/tmux-battery"]
 	path = tmux/dot-tmux/plugins/tmux-battery
 	url = https://github.com/tmux-plugins/tmux-battery
-[submodule "tmux/.tmux/plugins/tmux-open"]
+[submodule "tmux/dot-tmux/plugins/tmux-open"]
 	path = tmux/dot-tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
 [submodule "local/share/nvim/site/pack/tpreston/start/vim-fetch"]
