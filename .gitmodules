@@ -16,6 +16,3 @@
 [submodule "local/share/nvim/site/pack/tpreston/start/vim-fetch"]
 	path = local/share/nvim/site/pack/tpreston/start/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch
-[submodule "local/share/nvim/site/pack/tpreston/start/vim-surround"]
-	path = local/share/nvim/site/pack/tpreston/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
