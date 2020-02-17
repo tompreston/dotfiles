@@ -5,7 +5,7 @@
 # Source this file in .bash_profile
 # See `man bash` /INVOCATIONS
 
-HOSTNAME_CT_LT="ct-lt-02087"
+export HOSTNAME_CT_LT="ct-lt-02087"
 HOSTNAME_MBP="tomp-mbp.mynet"
 
 is_macos()
