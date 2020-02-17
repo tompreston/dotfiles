@@ -99,6 +99,7 @@ export EDITOR="nvim"
 export WEECHAT_HOME="$HOME/.dotfiles/weechat"
 export SUP_LOG_DIR="$WEECHAT_HOME/logs"
 export SUP_DIR="$HOME/w/standup"
+export JDIR_ENTRIES="$HOME/Documents/journal/entries"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
