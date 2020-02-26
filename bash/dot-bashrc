@@ -89,6 +89,7 @@ alias ll="ls -l"
 alias vim="nvim"
 
 pathadd "$HOME/.local/bin"
+pathadd "$HOME/.cargo/bin"
 
 setup_ctags
 ps1
