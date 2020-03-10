@@ -81,9 +81,11 @@ format()
 
 	tmplog=$(mktemp "/tmp/sup-format-${pcode}-XXXXXX.txt")
 
-	# Reverse the log and print until we find standup master (me)
+	# Reverse the log, search for standup, then print until we find
+	# standup master (me)
 	tac "$weechatlog" |
-		awk 'BEGIN { relevant=1 };
+		awk 'BEGIN { relevant=0 };
+			/[Ss]tandup end/ { relevant=1 };
 			relevant { print $0 };
 			/## Thomas Preston/ { relevant=0 }' |
 	# Reverse again and format the notes
@@ -95,11 +97,12 @@ format()
 			$3~/^## / { print "" };
 
 			# Surround Discussion header with one-line gaps
-			$3~/^# Discussion/ {
+			$3~/^#{1,2} Discussion/ {
 				discussion=1;
 				print "";
 				print $3;
 				print ""
+				next
 			};
 
 			# Print notes without timestamps or usernames
