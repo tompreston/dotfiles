@@ -128,9 +128,13 @@ push()
 		exit 1
 	fi
 
+	# Usually a standup log is in a $PCODE.wiki/standup_logs, and there is
+	# a $PCODE.wiki/Makefile which generates the standup index. Check for
+	# this and run it.
 	(set -e
 		cd "$log_dir"
 		git pull
+		test -e ../Makefile && make -C ..
 		git add "$log_path"
 		git commit -m "Add $log_file"
 		git push)
