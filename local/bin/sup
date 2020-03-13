@@ -85,7 +85,7 @@ format()
 	# standup master (me)
 	tac "$weechatlog" |
 		awk 'BEGIN { relevant=0 };
-			/[Ss]tandup end/ { relevant=1 };
+			/tandup end/ { relevant=1 };
 			relevant { print $0 };
 			/## Thomas Preston/ { relevant=0; exit }' |
 	# Reverse again and format the notes
