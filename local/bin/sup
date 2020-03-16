@@ -135,7 +135,7 @@ push()
 		cd "$log_dir"
 		git pull
 		test -e ../Makefile && make -C ..
-		git add ../Makefile "$log_path"
+		git add ../Makefile "$log_dir"
 		git commit -m "Add $log_file"
 		git push)
 
