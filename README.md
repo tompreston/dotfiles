@@ -7,3 +7,6 @@ Here are my dotfiles so I can remain consistent across distributions.
 
 It uses [GNU stow](https://www.gnu.org/software/stow/manual/stow.html) to
 symlink the files in place - whose default target directory is ..
+
+# TODO
+- Check out https://www.chezmoi.io/
