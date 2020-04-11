@@ -118,11 +118,13 @@ format()
 
 # Push a standup log
 # Remember, you can press `alt+.` to grab the last argument interactively.
-# If you'd prefer variables, you can use $_ or !$
+# If you'd prefer variables, you can use:
+#   - !$ to grab the last element on the command line (file from redirection)
+#   - $_ to grab the last argument
 # Example:
 #
 #     sup format $PCODE > w/$PCODE/$PCODE.wiki/standup_logs/2020-04-01-standup.md
-#     sup push $_
+#     sup push !$
 #
 push()
 {
