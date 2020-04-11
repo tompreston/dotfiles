@@ -61,16 +61,6 @@ ps1()
 	fi
 }
 
-setup_ctags()
-{
-	case "$(hostname)" in
-	"$HOSTNAME_CT_LT")
-		alias ctags="/var/lib/snapd/snap/bin/universal-ctags"
-		return
-		;;
-	esac
-}
-
 include "/etc/bashrc"
 include "$HOME/.bash_aliases"
 include "$HOME/journal/journal.env"
@@ -90,8 +80,8 @@ alias vim="nvim"
 
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
+pathadd "/var/lib/snapd/snap/bin"
 
-setup_ctags
 ps1
 
 export EDITOR="nvim"
