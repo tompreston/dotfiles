@@ -72,6 +72,9 @@ else
 	alias ls="ls --color=auto"
 fi
 
+# bitwarden session
+alias bws="bash --rcfile ~/.bws.bashrc"
+
 alias grep="grep --color=auto"
 alias l="ls -CF"
 alias la="ls -A"
