@@ -1,4 +1,5 @@
 #!/bin/bash
+# Start a new bash process with BW_SESSION set.
 # Run with `bash --rcfile bws.bashrc`
 # Or even `alias bws="bash --rcfile ~/.bws.bashrc"`
 pr_err()
