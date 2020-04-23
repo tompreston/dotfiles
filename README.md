@@ -10,3 +10,4 @@ symlink the files in place - whose default target directory is ..
 
 # TODO
 - Check out https://www.chezmoi.io/
+- Consider vim http://majutsushi.github.io/tagbar/
