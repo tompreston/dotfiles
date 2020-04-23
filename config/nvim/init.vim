@@ -35,3 +35,13 @@ autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd VimEnter * if @% =~ "w/standup" |
 	\ setlocal shiftwidth=2 tabstop=2 expandtab | endif
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
+
+" Syntastic default config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
