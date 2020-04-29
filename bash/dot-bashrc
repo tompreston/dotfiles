@@ -83,7 +83,6 @@ alias vim="nvim"
 
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
-pathadd "/var/lib/snapd/snap/bin"
 
 ps1
 
