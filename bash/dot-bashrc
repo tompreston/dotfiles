@@ -13,6 +13,18 @@ is_macos()
 	test "$(uname -s)" = "Darwin"
 }
 
+pr_hostname()
+{
+	declare -r proc_hostname="/proc/sys/kernel/hostname"
+
+	if [ -e "$proc_hostname" ]; then
+		cat "$proc_hostname"
+	else
+		# fallback
+		hostname
+	fi
+}
+
 # include if file exists
 include()
 {
@@ -41,7 +53,7 @@ ps1()
 	fi
 
 	# Custom PS1 for the following machines
-	case "$(hostname)" in
+	case "$(pr_hostname)" in
 	"$HOSTNAME_MBP"|"$HOSTNAME_CT_LT")
 		PS1='${debian_chroot:+($debian_chroot)}\w\[\033[33m\]\$\[\033[0m\] '
 		return
