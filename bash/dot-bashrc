@@ -21,13 +21,13 @@ include()
 	fi
 }
 
-# prepend string if string does not already contain it
+# append string to PATH, if PATH does not already contain string
 pathadd()
 {
-	declare -r prefix="$1"
+	declare -r suffix="$1"
 
-	if ! [[ "$PATH" =~ "$prefix" ]]; then
-		export PATH="${PATH:+${PATH}:}$prefix"
+	if ! [[ "$PATH" =~ .*"$suffix".* ]]; then
+		export PATH="${PATH}:${suffix}"
 	fi
 }
 
