@@ -18,18 +18,6 @@ if_macos_setup()
 	alias ls="ls -G"
 }
 
-pr_hostname()
-{
-	declare -r proc_hostname="/proc/sys/kernel/hostname"
-
-	if [ -e "$proc_hostname" ]; then
-		cat "$proc_hostname"
-	else
-		# fallback
-		hostname
-	fi
-}
-
 # append string to PATH, if PATH does not already contain string
 pathadd()
 {
