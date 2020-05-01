@@ -43,9 +43,11 @@ pathadd()
 {
 	declare -r suffix="$1"
 
-	if ! [[ "$PATH" =~ .*"$suffix".* ]]; then
-		export PATH="${PATH}:${suffix}"
-	fi
+	# If PATH is empty, set to suffix
+	case ":${PATH:=$suffix}:" in
+	*":$suffix:"*) :;;        # PATH already contains suffix.
+	*) PATH="$PATH:$suffix";; # Append suffix to PATH.
+	esac
 }
 
 ps1()
