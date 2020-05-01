@@ -17,16 +17,6 @@ export JDIR_ENTRIES="$JDIR/entries"
 export HOSTNAME_CT_LT="ct-lt-02087"
 HOSTNAME_MBP="tomp-mbp.mynet"
 
-# If we are on macOS, do some more overriding setup. Call at the end.
-if_macos_setup()
-{
-	if [ "$(uname -s)" != "Darwin" ]; then
-		return
-	fi
-	include "/usr/local/etc/bash_completion"
-	alias ls="ls -G"
-}
-
 # PATH munge, from Fedora /etc/profile
 pathmunge()
 {
@@ -51,6 +41,16 @@ ps1()
 		return
 		;;
 	esac
+}
+
+# If we are on macOS, do some more overriding setup. Call at the end.
+if_macos_setup()
+{
+	if [ "$(uname -s)" != "Darwin" ]; then
+		return
+	fi
+	include "/usr/local/etc/bash_completion"
+	alias ls="ls -G"
 }
 
 source "/etc/bashrc"
