@@ -17,6 +17,10 @@ export JDIR_ENTRIES="$JDIR/entries"
 export HOSTNAME_CT_LT="ct-lt-02087"
 HOSTNAME_MBP="tomp-mbp.mynet"
 
+# Call these early to avoid contamination, eg. `unset -f pathmunge`
+source "/etc/bashrc"
+source "$HOME/.bash_aliases"
+
 # PATH munge, from Fedora /etc/profile
 pathmunge()
 {
@@ -29,6 +33,7 @@ pathmunge()
 		else
 			PATH=$1:$PATH
 		fi
+		;;
 	esac
 }
 
@@ -52,10 +57,6 @@ if_macos_setup()
 	include "/usr/local/etc/bash_completion"
 	alias ls="ls -G"
 }
-
-source "/etc/bashrc"
-source "$HOME/.bash_aliases"
-source "$HOME/journal/journal.env"
 
 pathmunge "$HOME/.local/bin" after
 pathmunge "$HOME/.cargo/bin" after
