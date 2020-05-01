@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# bitwarden session
+alias bws="bash --rcfile ~/.bws.bashrc"
+
+alias grep="grep --color=auto"
+alias la="ls -A"
+alias ll="ls -l"
+alias l="ls -CF"
+alias ls="ls --color=auto"
+alias vim="nvim"
