@@ -30,14 +30,6 @@ pr_hostname()
 	fi
 }
 
-# include if file exists
-include()
-{
-	if [ -f "$1" ]; then
-		source "$1"
-	fi
-}
-
 # append string to PATH, if PATH does not already contain string
 pathadd()
 {
@@ -61,9 +53,9 @@ ps1()
 	esac
 }
 
-include "/etc/bashrc"
-include "$HOME/.bash_aliases"
-include "$HOME/journal/journal.env"
+source "/etc/bashrc"
+source "$HOME/.bash_aliases"
+source "$HOME/journal/journal.env"
 
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
