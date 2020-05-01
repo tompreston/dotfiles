@@ -27,15 +27,18 @@ if_macos_setup()
 	alias ls="ls -G"
 }
 
-# append string to PATH, if PATH does not already contain string
-pathadd()
+# PATH munge, from Fedora /etc/profile
+pathmunge()
 {
-	declare -r suffix="$1"
-
-	# If PATH is empty, set to suffix
-	case ":${PATH:=$suffix}:" in
-	*":$suffix:"*) :;;        # PATH already contains suffix.
-	*) PATH="$PATH:$suffix";; # Append suffix to PATH.
+	case ":${PATH}:" in
+	*:"$1":*)
+		;;
+	*)
+		if [ "$2" = "after" ] ; then
+			PATH=$PATH:$1
+		else
+			PATH=$1:$PATH
+		fi
 	esac
 }
 
@@ -54,8 +57,9 @@ source "/etc/bashrc"
 source "$HOME/.bash_aliases"
 source "$HOME/journal/journal.env"
 
-pathadd "$HOME/.local/bin"
-pathadd "$HOME/.cargo/bin"
+pathmunge "$HOME/.local/bin" after
+pathmunge "$HOME/.cargo/bin" after
+unset -f pathmunge
 
 ps1
 
