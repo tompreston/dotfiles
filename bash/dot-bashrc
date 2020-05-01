@@ -5,6 +5,15 @@
 # Source this file in .bash_profile
 # See `man bash` /INVOCATIONS
 
+export EDITOR="nvim"
+# Don't use stow-symlinks with weechat config, just point right at it. This is
+# because Docker can't see outside of the volume, so the symlinks break.
+export WEECHAT_HOME="$HOME/.dotfiles/weechat"
+export SUP_LOG_DIR="$WEECHAT_HOME/logs"
+export SUP_DIR="$HOME/w/standup"
+export JDIR="$HOME/Documents/journal"
+export JDIR_ENTRIES="$JDIR/entries"
+
 export HOSTNAME_CT_LT="ct-lt-02087"
 HOSTNAME_MBP="tomp-mbp.mynet"
 
@@ -49,15 +58,6 @@ pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
 
 ps1
-
-export EDITOR="nvim"
-# Don't use stow-symlinks with weechat config, just point right at it. This is
-# because Docker can't see outside of the volume, so the symlinks break.
-export WEECHAT_HOME="$HOME/.dotfiles/weechat"
-export SUP_LOG_DIR="$WEECHAT_HOME/logs"
-export SUP_DIR="$HOME/w/standup"
-export JDIR="$HOME/Documents/journal"
-export JDIR_ENTRIES="$JDIR/entries"
 
 if_macos_setup
 
