@@ -23,8 +23,10 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" Enable spellchecker with F5
+" Toggle spellchecker with F5
 map <F5> :setlocal spell! spelllang=en_gb<CR>
+" Toggle spellchecker with F8
+nmap <F8> :TagbarToggle<CR>
 
 " Always use system clipboard :help clipboard
 set clipboard+=unnamedplus
