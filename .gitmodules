@@ -22,3 +22,6 @@
 [submodule "local/share/nvim/site/pack/tpreston/start/rust.vim"]
 	path = local/share/nvim/site/pack/tpreston/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "local/share/nvim/site/pack/tpreston/start/tagbar"]
+	path = local/share/nvim/site/pack/tpreston/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
