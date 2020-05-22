@@ -143,8 +143,8 @@ push()
 	(set -e
 		cd "$log_dir"
 		git pull
-		test -e ../Makefile && make -C ..
-		git add ../Makefile "$log_dir"
+		test -e ../Makefile && (make -C ..; git add ../Makefile)
+		git add "$log_dir"
 		git commit -m "Add $log_file"
 		git push
 		make -C .. url_standup_latest)
