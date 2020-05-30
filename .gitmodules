@@ -28,3 +28,6 @@
 [submodule "tmux/dot-tmux/plugins/tmux-thumbs"]
 	path = tmux/dot-tmux/plugins/tmux-thumbs
 	url = https://github.com/fcsonline/tmux-thumbs
+[submodule "local/share/nvim/site/pack/tpreston/start/dispatch"]
+	path = local/share/nvim/site/pack/tpreston/start/dispatch
+	url = https://tpope.io/vim/dispatch.git
