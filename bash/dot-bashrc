@@ -5,7 +5,7 @@
 # Source this file in .bash_profile
 # See `man bash` /INVOCATIONS
 
-export EDITOR="nvim"
+export EDITOR="vim"
 # Don't use stow-symlinks with weechat config, just point right at it. This is
 # because Docker can't see outside of the volume, so the symlinks break.
 export WEECHAT_HOME="$HOME/.dotfiles/weechat"
