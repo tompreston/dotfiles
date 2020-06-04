@@ -34,3 +34,6 @@
 [submodule "vim/dot-vim/pack/tpreston/start/unimpaired"]
 	path = vim/dot-vim/pack/tpreston/start/unimpaired
 	url = https://tpope.io/vim/unimpaired.git
+[submodule "vim/dot-vim/pack/tpreston/start/syntastic"]
+	path = vim/dot-vim/pack/tpreston/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
