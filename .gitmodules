@@ -13,24 +13,24 @@
 [submodule "tmux/dot-tmux/plugins/tmux-open"]
 	path = tmux/dot-tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
-[submodule "local/share/nvim/site/pack/tpreston/start/vim-fetch"]
+[submodule "vim/dot-vim/pack/tpreston/start/vim-fetch"]
 	path = vim/dot-vim/pack/tpreston/start/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch
-[submodule "local/share/nvim/site/pack/tpreston/start/vim-sandwich"]
+[submodule "vim/dot-vim/pack/tpreston/start/vim-sandwich"]
 	path = vim/dot-vim/pack/tpreston/start/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
-[submodule "local/share/nvim/site/pack/tpreston/start/rust.vim"]
+[submodule "vim/dot-vim/pack/tpreston/start/rust.vim"]
 	path = vim/dot-vim/pack/tpreston/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
-[submodule "local/share/nvim/site/pack/tpreston/start/tagbar"]
+[submodule "vim/dot-vim/pack/tpreston/start/tagbar"]
 	path = vim/dot-vim/pack/tpreston/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "tmux/dot-tmux/plugins/tmux-thumbs"]
 	path = tmux/dot-tmux/plugins/tmux-thumbs
 	url = https://github.com/fcsonline/tmux-thumbs
-[submodule "local/share/nvim/site/pack/tpreston/start/dispatch"]
+[submodule "vim/dot-vim/pack/tpreston/start/dispatch"]
 	path = vim/dot-vim/pack/tpreston/start/dispatch
 	url = https://tpope.io/vim/dispatch.git
-[submodule "local/share/nvim/site/pack/tpreston/start/unimpaired"]
+[submodule "vim/dot-vim/pack/tpreston/start/unimpaired"]
 	path = vim/dot-vim/pack/tpreston/start/unimpaired
 	url = https://tpope.io/vim/unimpaired.git
