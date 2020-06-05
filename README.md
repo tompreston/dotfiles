@@ -18,3 +18,7 @@ symlink the files in place - whose default target directory is ..
   https://github.com/neomake/neomake/issues/2482
 - I've decided not to bother for now. It's very easy to get linting in the
   terminal, so just do that instead.
+- coc.nvim seems like the right approach for nvim. However it requires a funny
+  install. For now, I've changes my tmux prefix to C-f in preperation for it.
+- Ultimately, if I'm going to be doing messy node installs, I may as well switch
+  to vscode.
