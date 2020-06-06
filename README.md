@@ -19,6 +19,6 @@ symlink the files in place - whose default target directory is ..
 - I've decided not to bother for now. It's very easy to get linting in the
   terminal, so just do that instead.
 - coc.nvim seems like the right approach for nvim. However it requires a funny
-  install. For now, I've changes my tmux prefix to C-f in preperation for it.
+  node-based install and required C-Space for intelligent completion.
 - Ultimately, if I'm going to be doing messy node installs, I may as well switch
   to vscode.
