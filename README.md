@@ -18,3 +18,5 @@ symlink the files in place - whose default target directory is ..
   https://github.com/neomake/neomake/issues/2482
 - I've decided not to bother for now. It's very easy to get linting in the
   terminal, so just do that instead.
+
+This is a comment for the repo-example.
