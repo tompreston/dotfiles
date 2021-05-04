@@ -34,3 +34,6 @@
 [submodule "local/share/nvim/site/pack/tpreston/start/vim-sleuth"]
 	path = vim/dot-vim/pack/tpreston/start/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule "vim/dot-vim/pack/tpreston/start/vim-sensible"]
+	path = vim/dot-vim/pack/tpreston/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
