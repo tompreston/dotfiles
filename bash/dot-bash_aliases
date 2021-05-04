@@ -9,7 +9,6 @@ alias la="ls -A"
 alias ll="ls -l"
 alias l="ls -CF"
 alias ls="ls --color=auto"
-alias vim="nvim"
 
 # standup edit
 alias sup="$EDITOR ~/w/standup.yaml"
