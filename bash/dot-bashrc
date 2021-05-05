@@ -5,7 +5,7 @@
 # Source this file in .bash_profile
 # See `man bash` /INVOCATIONS
 
-export EDITOR="vim"
+export EDITOR="vimx"
 
 # stop pip opening keyring GUIs
 # https://github.com/pypa/pip/issues/8090#issuecomment-803363268
