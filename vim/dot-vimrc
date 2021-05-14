@@ -5,7 +5,7 @@ set number
 set path+=**
 
 " Draw a ruler
-set colorcolumn=81,101
+set colorcolumn=101
 highlight ColorColumn ctermbg=LightGrey ctermfg=DarkRed
 
 " Show leading tabs
