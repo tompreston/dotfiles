@@ -10,8 +10,8 @@ alias ll="ls -l"
 alias l="ls -CF"
 alias ls="ls --color=auto"
 
-# vimx has +clipboard buffers like "* and "+
-alias vim="vimx"
+# EDITOR will be vim or vimx
+alias vim="$EDITOR"
 
 # standup edit
 alias sup="$EDITOR ~/w/standup.yaml"
