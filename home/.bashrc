@@ -66,6 +66,7 @@ unset -f pathmunge
 # cases, just use vim.
 if command -V vimx &>/dev/null; then
 	export EDITOR="vimx"
+	alias vim="vimx"
 else
 	export EDITOR="vim"
 fi
