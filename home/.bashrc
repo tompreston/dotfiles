@@ -23,9 +23,14 @@ export JDIR_ENTRIES="$JDIR/entries"
 export HOSTNAME_CT_LT="ct-lt-02087"
 HOSTNAME_MBP="tomp-mbp.mynet"
 
-# Call these early to avoid contamination, eg. `unset -f pathmunge`
-source "/etc/bashrc"
-source "$HOME/.bash_aliases"
+# source these early to avoid contamination, eg. `unset -f pathmunge`
+srcs=(
+	"/etc/bashrc"
+	"$HOME/.bash_aliases"
+)
+for s in "${srcs[@]}"; do
+	test -e "$s" && source "$s"
+done
 
 # PATH munge, from Fedora /etc/profile
 pathmunge()
