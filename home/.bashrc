@@ -5,8 +5,6 @@
 # Source this file in .bash_profile
 # See `man bash` /INVOCATIONS
 
-export EDITOR="vimx"
-
 # stop pip opening keyring GUIs
 # https://github.com/pypa/pip/issues/8090#issuecomment-803363268
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
@@ -62,6 +60,15 @@ ps1()
 pathmunge "$HOME/.local/bin" after
 pathmunge "$HOME/.cargo/bin" after
 unset -f pathmunge
+
+# The vimx command has +clipboard for accessing the GUI clipboard registers.
+# However, this isn't always present or even necessary on remote machines, in those
+# cases, just use vim.
+if command -V vimx &>/dev/null; then
+	export EDITOR="vimx"
+else
+	export EDITOR="vim"
+fi
 
 # trying without PS1 for now (planning on removing it)
 #ps1
