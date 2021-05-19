@@ -9,17 +9,12 @@
 # https://github.com/pypa/pip/issues/8090#issuecomment-803363268
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
-# Don't use stow-symlinks with weechat config, just point right at it. This is
-# because Docker can't see outside of the volume, so the symlinks break.
 export WEECHAT_HOME="$HOME/.dotfiles/weechat"
 export SUP_PATTERN_BEGIN="## Thomas Preston (tpreston)"
 export SUP_DIR_IRC_LOGS="$WEECHAT_HOME/logs"
 export SUP_DIR_NOTES="$HOME/w/standup"
 export JDIR="$HOME/Documents/journal"
 export JDIR_ENTRIES="$JDIR/entries"
-
-export HOSTNAME_CT_LT="ct-lt-02087"
-HOSTNAME_MBP="tomp-mbp.mynet"
 
 # source these early to avoid contamination, eg. `unset -f pathmunge`
 srcs=(
@@ -59,6 +54,3 @@ if command -V vimx &>/dev/null; then
 else
 	export EDITOR="vim"
 fi
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
