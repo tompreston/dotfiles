@@ -59,8 +59,8 @@ ps1()
 	esac
 }
 
-pathmunge "$HOME/.local/bin" after
-pathmunge "$HOME/.cargo/bin" after
+pathmunge "$HOME/.local/bin" before
+pathmunge "$HOME/.cargo/bin" before
 unset -f pathmunge
 
 # trying without PS1 for now (planning on removing it)
