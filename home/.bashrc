@@ -46,17 +46,6 @@ pathmunge()
 	esac
 }
 
-ps1()
-{
-	# Custom PS1 for the following machines
-	case "$HOSTNAME" in
-	"$HOSTNAME_MBP"|"$HOSTNAME_CT_LT")
-		PS1='\w\[\033[33m\]\$\[\033[0m\] '
-		return
-		;;
-	esac
-}
-
 pathmunge "$HOME/.local/bin" before
 pathmunge "$HOME/.cargo/bin" before
 unset -f pathmunge
@@ -70,9 +59,6 @@ if command -V vimx &>/dev/null; then
 else
 	export EDITOR="vim"
 fi
-
-# trying without PS1 for now (planning on removing it)
-#ps1
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
