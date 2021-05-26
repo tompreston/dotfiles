@@ -13,4 +13,4 @@ alias l="ls -CF"
 alias ls="ls --color=auto"
 
 # standup edit
-alias sup="$EDITOR ~/w/standup.yaml"
+alias sup="$EDITOR ~/w/standup.txt"
