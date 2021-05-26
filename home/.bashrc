@@ -48,9 +48,14 @@ unset -f pathmunge
 # The vimx command has +clipboard for accessing the GUI clipboard registers.
 # However, this isn't always present or even necessary on remote machines, in those
 # cases, just use vim.
-if command -V vimx &>/dev/null; then
+if command -v vimx >/dev/null; then
 	export EDITOR="vimx"
 	alias vim="vimx"
 else
 	export EDITOR="vim"
+fi
+
+# terraform autocomplete
+if command -v terraform >/dev/null; then
+	complete -C "$(command -v terraform)" terraform
 fi
