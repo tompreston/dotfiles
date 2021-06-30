@@ -7,9 +7,6 @@
 [submodule "home/.tmux/plugins/tmux-pain-control"]
 	path = home/.tmux/plugins/tmux-pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control
-[submodule "home/.tmux/plugins/tmux-battery"]
-	path = home/.tmux/plugins/tmux-battery
-	url = https://github.com/tmux-plugins/tmux-battery
 [submodule "home/.tmux/plugins/tmux-open"]
 	path = home/.tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
