@@ -34,3 +34,6 @@
 [submodule "home/.vim/pack/tpreston/start/vim-sensible"]
 	path = home/.vim/pack/tpreston/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule "home/.vim/pack/tpreston/start/vim-openscad"]
+	path = home/.vim/pack/tpreston/start/vim-openscad
+	url = git@github.com:sirtaj/vim-openscad.git
