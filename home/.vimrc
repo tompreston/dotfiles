@@ -14,6 +14,9 @@ highlight ColorColumn ctermbg=LightGrey ctermfg=DarkRed
 set list
 highlight SpecialKey ctermfg=LightGrey
 
+" Highlight all matches in incsearch. C-L clears.
+set hlsearch
+
 " Highlight trailing spaces
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
