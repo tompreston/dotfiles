@@ -6,6 +6,12 @@
 It uses [GNU stow](https://www.gnu.org/software/stow/manual/stow.html) to
 symlink the files in place - whose default target directory is ..
 
+# Go Vim plugins
+* [vim-go](https://github.com/fatih/vim-go) is the standard plugin
+* [govim](https://github.com/govim/govim) is an experimental clone written in go.
+
+Just use vim-go for now since it's not experimental. Try govim later.
+
 # TODO
 - Check out https://www.chezmoi.io/
 - Consider vim http://majutsushi.github.io/tagbar/
