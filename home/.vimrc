@@ -52,3 +52,12 @@ nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v
 " Rust, auto-format on save
 let g:rustfmt_autosave = 1
 
+" Go mappings
+" https://medium.com/pragmatic-programmers/configuring-vim-to-develop-go-programs-e839641da4ac
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>e <Plug>(go-rename)
+autocmd FileType go nmap <Leader>s <Plug>(go-implements)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
