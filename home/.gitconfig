@@ -1,6 +1,6 @@
 [user]
 	name = Thomas Preston
-	email = thomasmarkpreston@gmail.com
+	email = thomaspreston@monzo.com
 [alias]
 	co = checkout
 	br = branch
@@ -8,7 +8,7 @@
 	st = status
 	di = diff
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[includeIf "gitdir:~/w/"]
-	path = ~/w/.gitconfig
 [pull]
 	rebase = false
+[url "ssh://git@github.com/monzo/"]
+	insteadOf = https://github.com/monzo/
