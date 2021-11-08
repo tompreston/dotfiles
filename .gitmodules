@@ -11,31 +11,31 @@
 	path = home/.tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
 [submodule "home/.vim/pack/tpreston/start/vim-fetch"]
-	path = home/.vim/pack/tpreston/start/vim-fetch
+	path = home/.vim/pack/plugins/start/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch
 [submodule "home/.vim/pack/tpreston/start/vim-sandwich"]
-	path = home/.vim/pack/tpreston/start/vim-sandwich
+	path = home/.vim/pack/plugins/start/vim-sandwich
 	url = https://github.com/machakann/vim-sandwich
 [submodule "home/.vim/pack/tpreston/start/rust.vim"]
-	path = home/.vim/pack/tpreston/start/rust.vim
+	path = home/.vim/pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
 [submodule "home/.vim/pack/tpreston/start/tagbar"]
-	path = home/.vim/pack/tpreston/start/tagbar
+	path = home/.vim/pack/plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule "home/.vim/pack/tpreston/start/dispatch"]
-	path = home/.vim/pack/tpreston/start/dispatch
+	path = home/.vim/pack/plugins/start/dispatch
 	url = https://tpope.io/vim/dispatch.git
 [submodule "home/.vim/pack/tpreston/start/unimpaired"]
-	path = home/.vim/pack/tpreston/start/unimpaired
+	path = home/.vim/pack/plugins/start/unimpaired
 	url = https://tpope.io/vim/unimpaired.git
 [submodule "home/.vim/pack/tpreston/start/vim-sleuth"]
-	path = home/.vim/pack/tpreston/start/vim-sleuth
+	path = home/.vim/pack/plugins/start/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
 [submodule "home/.vim/pack/tpreston/start/vim-sensible"]
-	path = home/.vim/pack/tpreston/start/vim-sensible
+	path = home/.vim/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
 [submodule "home/.vim/pack/tpreston/start/vim-openscad"]
-	path = home/.vim/pack/tpreston/start/vim-openscad
+	path = home/.vim/pack/plugins/start/vim-openscad
 	url = git@github.com:sirtaj/vim-openscad.git
 [submodule "home/.vim/pack/plugins/start/vim-go"]
 	path = home/.vim/pack/plugins/start/vim-go
