@@ -40,3 +40,6 @@
 [submodule "home/.vim/pack/plugins/start/vim-go"]
 	path = home/.vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "home/.vim/pack/plugins/start/cql-vim"]
+	path = home/.vim/pack/plugins/start/cql-vim
+	url = git@github.com:elubow/cql-vim.git
