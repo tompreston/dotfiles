@@ -26,20 +26,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" Clipboard
-"
-" On Fedora, install vim-X11 to get the `vimx` program.
-" vimx has +clipboard buffers like:
-"
-"     "*, PRIMARY, middle click, star-select, clipboard-unnamed.
-"     "+, CLIPBOARD, ctrl+c, ctrl PLUS c, clipboard-unnamedplus.
-"
-" Since we're on Wayland, remap these vimx buffers to wl-copy.
-" https://github.com/vim/vim/issues/5157#issue-516033639
-xnoremap "+y y:call system("wl-copy", @")<cr>
-nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
-nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
-
 " Rust, auto-format on save
 let g:rustfmt_autosave = 1
 
