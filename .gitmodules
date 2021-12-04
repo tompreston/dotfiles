@@ -49,3 +49,6 @@
 [submodule "home/.vim/pack/plugins/start/vim-rhubarb"]
 	path = home/.vim/pack/plugins/start/vim-rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
+[submodule "home/.vim/pack/plugins/start/vim-comentary"]
+	path = home/.vim/pack/plugins/start/vim-comentary
+	url = git@github.com:tpope/vim-commentary.git
