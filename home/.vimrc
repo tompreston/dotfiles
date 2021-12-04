@@ -40,15 +40,6 @@ xnoremap "+y y:call system("wl-copy", @")<cr>
 nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
 nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
 
-" TODO tabs/spaces should be by vim-sleuth, or vim format strings.
-" Keep these here until I'm confident with the process.
-"" Tab is 4 spaces for the following
-"autocmd FileType markdown setlocal shiftwidth=4 tabstop=4 expandtab
-"" Tab is 2 spaces for the following
-"autocmd VimEnter * if @% =~ "w/standup" |
-"	\ setlocal shiftwidth=2 tabstop=2 expandtab | endif
-"autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
-
 " Rust, auto-format on save
 let g:rustfmt_autosave = 1
 
