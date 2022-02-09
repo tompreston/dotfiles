@@ -10,6 +10,18 @@
 autoload -U select-word-style
 select-word-style bash
 
+# Set the prompt, with some VCS info
+autoload -Uz vcs_info
+setopt PROMPT_SUBST
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats '[%b]'
+precmd () {
+	vcs_info
+}
+PROMPT='%n %3~ %# '
+RPROMPT='${vcs_info_msg_0_}'
+
+# Finally set some aliases
 alias grep="grep --color=auto"
 alias la="ls -A"
 alias ll="ls -l"
