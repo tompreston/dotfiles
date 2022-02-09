@@ -41,3 +41,7 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
+
+" Use fzf for file searching
+" https://github.com/junegunn/fzf/blob/master/README-VIM.md
+set rtp+=/usr/local/opt/fzf
