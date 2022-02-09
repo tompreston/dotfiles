@@ -1,6 +1,6 @@
 [user]
-	name = Thomas Preston
-	email = thomaspreston@monzo.com
+	name = Tom Preston
+	email = tompreston@monzo.com
 [alias]
 	co = checkout
 	br = branch
@@ -17,3 +17,5 @@
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
+[init]
+	defaultBranch = main
