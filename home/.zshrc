@@ -17,7 +17,7 @@ function sourcefile() {
 function vimf() {
 	local file=$(fzf)
 	vim $file
-	echo file
+	echo $file
 }
 
 # Docker run some image as an env
