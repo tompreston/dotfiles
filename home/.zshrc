@@ -43,16 +43,8 @@ alias l="ls -CF"
 autoload -U select-word-style
 select-word-style bash
 
-# Set the prompt, with some VCS info
-autoload -Uz vcs_info
-setopt PROMPT_SUBST
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats '[%b]'
-precmd () {
-	vcs_info
-}
+# Set the prompt
 PROMPT='%n %3~ %# '
-RPROMPT='${vcs_info_msg_0_}'
 
 # Monzo stuff
 sourcefile $HOME/src/github.com/monzo/starter-pack/zshrc
