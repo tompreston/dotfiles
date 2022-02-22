@@ -13,9 +13,6 @@
 [submodule "home/.vim/pack/plugins/start/vim-fetch"]
 	path = home/.vim/pack/plugins/start/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch
-[submodule "home/.vim/pack/plugins/start/vim-sandwich"]
-	path = home/.vim/pack/plugins/start/vim-sandwich
-	url = https://github.com/machakann/vim-sandwich
 [submodule "home/.vim/pack/plugins/start/rust.vim"]
 	path = home/.vim/pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
