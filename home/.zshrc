@@ -32,12 +32,13 @@ function dr() {
 
 alias cdw="cd ~/src/github.com/monzo/wearedev"
 alias todo="vim ~/Documents/todo.md"
-alias eod="vim ~/Documents/eod.md"
+alias eod="open https://docs.google.com/document/d/1kBld3aUUazEdx-tK-YNUholDqxMon4LuVqGytgQpYPU/edit"
 alias grep="grep --color=auto"
 alias la="ls -A"
 alias ll="ls -l"
 alias ls="ls -G"
 alias l="ls -CF"
+alias s101_tel=">&2 echo 'Use s101_tng!'"
 
 # Bash-like navigation
 autoload -U select-word-style
