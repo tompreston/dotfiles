@@ -52,3 +52,6 @@
 [submodule "home/.vim/pack/plugins/start/vim-surround"]
 	path = home/.vim/pack/plugins/start/vim-surround
 	url = git@github.com:tpope/vim-surround.git
+[submodule "home/.vim/pack/plugins/start/fzf.vim"]
+	path = home/.vim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
