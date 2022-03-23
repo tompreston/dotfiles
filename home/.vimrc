@@ -26,6 +26,10 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Use fzf for file searching
+" https://github.com/junegunn/fzf/blob/master/README-VIM.md
+set rtp+=/usr/local/opt/fzf
+
 " Rust, auto-format on save
 let g:rustfmt_autosave = 1
 
@@ -43,7 +47,3 @@ autocmd FileType go nmap <Leader>av <Plug>(go-alternate-vertical)
 
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
-
-" Use fzf for file searching
-" https://github.com/junegunn/fzf/blob/master/README-VIM.md
-set rtp+=/usr/local/opt/fzf
