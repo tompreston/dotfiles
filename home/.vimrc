@@ -38,6 +38,8 @@ autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <Leader>e <Plug>(go-rename)
 autocmd FileType go nmap <Leader>s <Plug>(go-implements)
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <Leader>ae <Plug>(go-alternate-edit)
+autocmd FileType go nmap <Leader>av <Plug>(go-alternate-vertical)
 
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
