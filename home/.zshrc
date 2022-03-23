@@ -60,9 +60,11 @@ sourcefile $HOME/src/github.com/monzo/starter-pack/zshrc
 
 # Export tail
 # Random setup scripts like to append here.
-export PYENV_ROOT=$(brew --prefix)/var/pyenv
-export PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
+
+# This already happens in starter-pack
+#export PYENV_ROOT=$(brew --prefix)/var/pyenv
+#export PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
+#if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="${CURRENT_USER}/.poetry/bin:$PATH"
