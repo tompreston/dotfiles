@@ -30,6 +30,7 @@ function dr() {
 		/bin/bash
 }
 
+alias vim="nvim"
 alias cdw="cd ~/src/github.com/monzo/wearedev"
 alias todo="vim ~/Documents/todo.md"
 alias eod="open https://docs.google.com/document/d/1kBld3aUUazEdx-tK-YNUholDqxMon4LuVqGytgQpYPU/edit"
