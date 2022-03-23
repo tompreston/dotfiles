@@ -10,48 +10,45 @@
 [submodule "home/.tmux/plugins/tmux-open"]
 	path = home/.tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
-[submodule "home/.vim/pack/plugins/start/vim-fetch"]
-	path = home/.vim/pack/plugins/start/vim-fetch
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-fetch"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-fetch
 	url = https://github.com/wsdjeg/vim-fetch
-[submodule "home/.vim/pack/plugins/start/rust.vim"]
-	path = home/.vim/pack/plugins/start/rust.vim
+[submodule "home/.local/share/nvim/site/pack/plugins/start/rust.vim"]
+	path = home/.local/share/nvim/site/pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
-[submodule "home/.vim/pack/plugins/start/tagbar"]
-	path = home/.vim/pack/plugins/start/tagbar
+[submodule "home/.local/share/nvim/site/pack/plugins/start/tagbar"]
+	path = home/.local/share/nvim/site/pack/plugins/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "home/.vim/pack/plugins/start/dispatch"]
-	path = home/.vim/pack/plugins/start/dispatch
+[submodule "home/.local/share/nvim/site/pack/plugins/start/dispatch"]
+	path = home/.local/share/nvim/site/pack/plugins/start/dispatch
 	url = https://tpope.io/vim/dispatch.git
-[submodule "home/.vim/pack/plugins/start/unimpaired"]
-	path = home/.vim/pack/plugins/start/unimpaired
+[submodule "home/.local/share/nvim/site/pack/plugins/start/unimpaired"]
+	path = home/.local/share/nvim/site/pack/plugins/start/unimpaired
 	url = https://tpope.io/vim/unimpaired.git
-[submodule "home/.vim/pack/plugins/start/vim-sleuth"]
-	path = home/.vim/pack/plugins/start/vim-sleuth
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-sleuth"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
-[submodule "home/.vim/pack/plugins/start/vim-sensible"]
-	path = home/.vim/pack/plugins/start/vim-sensible
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-sensible"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
-[submodule "home/.vim/pack/plugins/start/vim-openscad"]
-	path = home/.vim/pack/plugins/start/vim-openscad
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-openscad"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-openscad
 	url = git@github.com:sirtaj/vim-openscad.git
-[submodule "home/.vim/pack/plugins/start/vim-go"]
-	path = home/.vim/pack/plugins/start/vim-go
-	url = https://github.com/fatih/vim-go.git
-[submodule "home/.vim/pack/plugins/start/cql-vim"]
-	path = home/.vim/pack/plugins/start/cql-vim
+[submodule "home/.local/share/nvim/site/pack/plugins/start/cql-vim"]
+	path = home/.local/share/nvim/site/pack/plugins/start/cql-vim
 	url = git@github.com:elubow/cql-vim.git
-[submodule "home/.vim/pack/plugins/start/vim-fugitive"]
-	path = home/.vim/pack/plugins/start/vim-fugitive
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-fugitive"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive.git
-[submodule "home/.vim/pack/plugins/start/vim-rhubarb"]
-	path = home/.vim/pack/plugins/start/vim-rhubarb
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-rhubarb"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-rhubarb
 	url = git@github.com:tpope/vim-rhubarb.git
-[submodule "home/.vim/pack/plugins/start/vim-comentary"]
-	path = home/.vim/pack/plugins/start/vim-comentary
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-comentary"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-comentary
 	url = git@github.com:tpope/vim-commentary.git
-[submodule "home/.vim/pack/plugins/start/vim-surround"]
-	path = home/.vim/pack/plugins/start/vim-surround
+[submodule "home/.local/share/nvim/site/pack/plugins/start/vim-surround"]
+	path = home/.local/share/nvim/site/pack/plugins/start/vim-surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule "home/.vim/pack/plugins/start/fzf.vim"]
-	path = home/.vim/pack/plugins/start/fzf.vim
+[submodule "home/.local/share/nvim/site/pack/plugins/start/fzf.vim"]
+	path = home/.local/share/nvim/site/pack/plugins/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
