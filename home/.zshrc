@@ -31,6 +31,7 @@ function dr() {
 }
 
 alias vim="nvim"
+alias vimconf="nvim ~/.config/nvim/init.vim"
 alias cdw="cd ~/src/github.com/monzo/wearedev"
 alias todo="vim ~/Documents/todo.md"
 alias eod="open https://docs.google.com/document/d/1kBld3aUUazEdx-tK-YNUholDqxMon4LuVqGytgQpYPU/edit"
