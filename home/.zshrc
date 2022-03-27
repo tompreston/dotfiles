@@ -31,10 +31,11 @@ function dr() {
 }
 
 alias vim="nvim"
-alias vimconf="nvim ~/.config/nvim/init.vim"
+alias vimconf="nvim ~/.config/nvim/{init.vim,lua/lsp_config.lua}"
 alias cdw="cd ~/src/github.com/monzo/wearedev"
 alias todo="vim ~/Documents/todo.md"
 alias eod="open https://docs.google.com/document/d/1kBld3aUUazEdx-tK-YNUholDqxMon4LuVqGytgQpYPU/edit"
+alias brag="open https://docs.google.com/document/d/1CB8e5D6PAZU6YtRIW2Ic0gSOZlwfHbtiJj2EbN5Jf_8/edit"
 alias grep="grep --color=auto"
 alias la="ls -A"
 alias ll="ls -l"
