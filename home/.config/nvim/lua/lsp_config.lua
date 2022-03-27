@@ -1,9 +1,16 @@
--- lspconfig mappings
+-- LSP configuration
+--
 -- For some baseline configs, see:
--- * https://www.getman.io/posts/programming-go-in-neovim/
--- * https://github.com/neovim/nvim-lspconfig
+--
+--     https://github.com/golang/tools/blob/master/gopls/doc/vim.md#imports
+--     https://www.getman.io/posts/programming-go-in-neovim/
+--     https://github.com/neovim/nvim-lspconfig
+--
 
-local on_attach = function(client, bufnr)
+-- See logs with :lua vim.cmd('e'..vim.lsp.get_log_path())
+--vim.lsp.set_log_level("debug")
+
+function on_attach(client, bufnr)
 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -53,8 +60,35 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-require('lspconfig').gopls.setup{
-	cmd = {'gopls'},
+-- Organise imports like goimports
+-- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#imports
+function org_imports(wait_ms)
+	local params = vim.lsp.util.make_range_params()
+	params.context = {only = {"source.organizeImports"}}
+	local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
+	for _, res in pairs(result or {}) do
+		for _, r in pairs(res.result or {}) do
+			if r.edit then
+				vim.lsp.util.apply_workspace_edit(r.edit)
+			else
+				vim.lsp.buf.execute_command(r.command)
+			end
+		end
+	end
+end
+
+local lspconfig = require "lspconfig"
+local util = require "lspconfig/util"
+
+-- Setup Go LSP client
+lspconfig.gopls.setup {
+	cmd = {"gopls", "serve"},
+	filetypes = {"go", "gomod"},
+
+	-- Ignore typical project roots which cause gopls to ingest large monorepos.
+	--root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+	root_dir = util.root_pattern("main.go", "README.md", "LICENSE"),
+
 	settings = {
 		gopls = {
 			analyses = {
@@ -62,6 +96,8 @@ require('lspconfig').gopls.setup{
 				shadow = true,
 			},
 			staticcheck = true,
+
+			-- Don't try to find the go.mod file, otherwise we ingest large monorepos
 			expandWorkspaceToModule = false,
 			memoryMode = "DegradeClosed",
 			directoryFilters = {
@@ -70,58 +106,6 @@ require('lspconfig').gopls.setup{
 			},
 		},
 	},
+
 	on_attach = on_attach,
 }
-
--- Run the organizeImport code action.
--- You can do this manually with <ga>, then selecting Organise Imports.
--- This feels a bit complicated and half baked, for something you can easily
--- reach with codeActions. I might remove this function some day, and just use ga.
-function goimports(timeout_ms)
-	local context = {
-		source = {
-			organizeImports = true
-		}
-	}
-	vim.validate {
-		context = {
-			context,
-			"t",
-			true
-		}
-	}
-
-	local params = vim.lsp.util.make_range_params()
-	params.context = context
-
-	-- Pass the organize imports action to the LSP server
-	-- See the implementation of the textDocument/codeAction callback
-	-- (lua/vim/lsp/handler.lua) for how to do this properly.
-	local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeout_ms)
-	if not result or next(result) == nil then
-		return
-	end
-	local actions = result[1].result
-	if not actions then
-		return
-	end
-	local action = actions[1]
-
-	-- Run the actions we get in return
-	-- textDocument/codeAction can return either Command[] or CodeAction[]. If it
-	-- is a CodeAction, it can have either an edit, a command or both. Edits
-	-- should be executed first.
-	if action.edit or type(action.command) == "table" then
-		if action.edit then
-			vim.lsp.util.apply_workspace_edit(action.edit)
-		end
-		if type(action.command) == "table" then
-			vim.lsp.buf.execute_command(action.command)
-		end
-	else
-		vim.lsp.buf.execute_command(action)
-	end
-end
-
--- See logs with :lua vim.cmd('e'..vim.lsp.get_log_path())
---vim.lsp.set_log_level("debug")

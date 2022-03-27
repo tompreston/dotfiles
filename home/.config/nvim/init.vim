@@ -38,4 +38,4 @@ let g:rustfmt_autosave = 1
 " https://www.getman.io/posts/programming-go-in-neovim/
 lua require("lsp_config")
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.go lua goimports(1000)
+autocmd BufWritePre *.go lua org_imports(1000)
