@@ -7,7 +7,11 @@
 --     https://github.com/neovim/nvim-lspconfig
 --
 
--- See logs with :lua vim.cmd('e'..vim.lsp.get_log_path())
+-- See logs with
+--
+--     :lua vim.cmd('e'..vim.lsp.get_log_path())
+--     tail -f ~/.cache/nvim/lsp.log
+--
 --vim.lsp.set_log_level("debug")
 
 function on_attach(client, bufnr)
