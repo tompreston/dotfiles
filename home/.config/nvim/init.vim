@@ -32,6 +32,7 @@ set rtp+=/usr/local/opt/fzf
 
 " Rust, auto-format on save
 " TODO use LSP for Rust
+" https://rust-analyzer.github.io/manual.html#nvim-lsp
 let g:rustfmt_autosave = 1
 
 " LSP config for Go
