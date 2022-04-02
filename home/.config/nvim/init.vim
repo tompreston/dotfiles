@@ -30,6 +30,20 @@ autocmd BufWinLeave * call clearmatches()
 " https://github.com/junegunn/fzf/blob/master/README-VIM.md
 set rtp+=/usr/local/opt/fzf
 
+" projectionist
+" https://github.com/tpope/vim-projectionist
+let g:projectionist_heuristics = {
+	\ "go.work|go.mod": {
+		\ "*.go": {
+			\ "alternate": "{}_test.go",
+			\ "type": "source"
+		\ },
+		\ "*_test.go": {
+			\ "alternate": "{}.go",
+			\ "type": "test"
+		\ },
+	\ }}
+
 " Rust, auto-format on save
 " TODO use LSP for Rust
 " https://rust-analyzer.github.io/manual.html#nvim-lsp
