@@ -36,11 +36,13 @@ let g:projectionist_heuristics = {
 	\ "go.work|go.mod": {
 		\ "*.go": {
 			\ "alternate": "{}_test.go",
-			\ "type": "source"
+			\ "type": "source",
+			\ "dispatch": "go build %"
 		\ },
 		\ "*_test.go": {
 			\ "alternate": "{}.go",
-			\ "type": "test"
+			\ "type": "test",
+			\ "dispatch": "go test ."
 		\ },
 	\ }}
 
