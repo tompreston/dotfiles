@@ -32,6 +32,7 @@ set rtp+=/usr/local/opt/fzf
 
 " projectionist
 " https://github.com/tpope/vim-projectionist
+" help expand
 let g:projectionist_heuristics = {
 	\ "go.work|go.mod": {
 		\ "*.go": {
@@ -42,7 +43,7 @@ let g:projectionist_heuristics = {
 		\ "*_test.go": {
 			\ "alternate": "{}.go",
 			\ "type": "test",
-			\ "dispatch": "go test ."
+			\ "dispatch": "go test %:p:h"
 		\ },
 	\ }}
 
