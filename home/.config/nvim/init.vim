@@ -34,7 +34,7 @@ set rtp+=/usr/local/opt/fzf
 " https://github.com/tpope/vim-projectionist
 " help expand
 let g:projectionist_heuristics = {
-	\ "go.work|go.mod": {
+	\ "go.work|go.mod|main.go": {
 		\ "*.go": {
 			\ "alternate": "{}_test.go",
 			\ "type": "source",
@@ -56,4 +56,5 @@ let g:rustfmt_autosave = 1
 " https://www.getman.io/posts/programming-go-in-neovim/
 lua require("lsp_config")
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.go lua org_imports(1000)
+autocmd BufWritePre *.go lua go_org_imports()
+autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
