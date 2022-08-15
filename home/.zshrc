@@ -16,7 +16,7 @@ function sourcefile() {
 # Open vim with fzf
 function vimf() {
 	local file=$(fzf)
-	vim $file
+	"$EDITOR" $file
 	echo $file
 }
 
@@ -37,15 +37,22 @@ alias vimconf="$EDITOR ~/.config/nvim/{init.vim,lua/lsp_config.lua}"
 bindkey -e
 
 alias cdw="cd ~/src/github.com/monzo/wearedev"
+alias cdd="cd ~/Downloads"
 alias todo="vim ~/Documents/todo.md"
 alias eod="open https://docs.google.com/document/d/1kBld3aUUazEdx-tK-YNUholDqxMon4LuVqGytgQpYPU/edit"
 alias brag="open https://docs.google.com/document/d/1CB8e5D6PAZU6YtRIW2Ic0gSOZlwfHbtiJj2EbN5Jf_8/edit"
+alias jn="open https://docs.google.com/document/d/1ZdQ7HEUv5xqDOYGkemFH9RLcNwljpnPwck6Hh9Sf-6M/edit"
 alias grep="grep --color=auto"
 alias la="ls -A"
 alias ll="ls -l"
 alias ls="ls -G"
 alias l="ls -CF"
 alias s101_tel=">&2 echo 'Use s101_tng!'"
+
+# Kubernetes
+autoload -U +X compinit && compinit
+source <(kubectl completion zsh)
+alias k="kubectl"
 
 # Bash-like navigation
 autoload -U select-word-style
@@ -59,14 +66,15 @@ sourcefile $HOME/src/github.com/monzo/starter-pack/zshrc
 
 # NVM settings
 # Too slow and I don't use nvm. Ignore for now.
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-#[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-#[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
 # Export tail
 # Random setup scripts like to append here.
+#
 
 # This already happens in starter-pack
 #export PYENV_ROOT=$(brew --prefix)/var/pyenv
