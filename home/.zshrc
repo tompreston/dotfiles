@@ -49,7 +49,7 @@ alias ls="ls -G"
 alias l="ls -CF"
 alias s101_tel=">&2 echo 'Use s101_tng!'"
 
-# Kubernetes
+# Kubernetes completion (adds latency)
 autoload -U +X compinit && compinit
 source <(kubectl completion zsh)
 alias k="kubectl"
@@ -64,13 +64,18 @@ PROMPT='%n %3~ %# '
 # Monzo stuff
 sourcefile $HOME/src/github.com/monzo/starter-pack/zshrc
 
-# NVM settings
-# Too slow and I don't use nvm. Ignore for now.
+# NVM settings (adds latency)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# Set up SSH AUTH SOCK if not already set up
+# TODO delete if we don't need this, ignoring until I see the problem again
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#if [ -z $(pgrep gpg-agent) ]; then
+#	gpg-agent --daemon
+#fi
 
 # Export tail
 # Random setup scripts like to append here.
