@@ -49,10 +49,12 @@ alias ls="ls -G"
 alias l="ls -CF"
 alias s101_tel=">&2 echo 'Use s101_tng!'"
 
-# Kubernetes completion (adds latency)
-autoload -U +X compinit && compinit
-source <(kubectl completion zsh)
-alias k="kubectl"
+if type kubectl >/dev/null; then
+	# Kubernetes completion (adds latency)
+	autoload -U +X compinit && compinit
+	source <(kubectl completion zsh)
+	alias k="kubectl"
+fi
 
 # Bash-like navigation
 autoload -U select-word-style
