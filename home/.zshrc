@@ -35,12 +35,14 @@ export VISUAL="nvim"
 export VIMCONFIG="$HOME/.config/nvim"
 export VIMDATA="$HOME/.local/share/nvim"
 
+export FZF_DEFAULT_COMMAND="rg --files"
+
 # Use Neovim instead of vim or vi
 alias vim="$VISUAL"
 alias vi="$VISUAL"
 
 # Open the vim configs
-alias vimconf="$VISUAL $VIMCONFIG/init.vim $VIMCONFIG/lua/lsp_config.lua"
+alias vimconf="$VISUAL $VIMCONFIG/lua/settings.lua"
 
 # Use emacs keybindings, which I'm used to
 bindkey -e
