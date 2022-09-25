@@ -1,10 +1,1 @@
-config/nvim/.netrwhist
-local/bin/jn
-local/bin/jn-11
-local/bin/jn-push-entries
-local/bin/jn-timesheet
-local/share/nvim/shada/main.shada
-.profile.d/journal.env
-weechat/logs
-weechat/sec.conf
-weechat/weechat.log
+!home/.*
