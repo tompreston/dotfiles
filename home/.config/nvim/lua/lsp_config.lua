@@ -1,4 +1,4 @@
--- LSP configuration
+-- 🔮 LSP config
 --
 -- For some baseline configs, see:
 --
@@ -113,3 +113,14 @@ lspconfig.gopls.setup {
 
 	on_attach = on_attach,
 }
+
+-- Rust, auto-format on save
+-- TODO use LSP for Rust
+-- https://rust-analyzer.github.io/manual.html#nvim-lsp
+-- let g:rustfmt_autosave = 1
+
+-- LSP config for Go
+-- https://www.getman.io/posts/programming-go-in-neovim/
+vim.cmd("autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)")
+vim.cmd("autocmd BufWritePre *.go lua go_org_imports()")
+vim.cmd("autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc")
