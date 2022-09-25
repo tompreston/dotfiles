@@ -62,3 +62,6 @@ vim.g.projectionist_heuristics = {
 -- let g:vsnip_filetypes = {}
 -- let g:vsnip_filetypes.javascriptreact = ['javascript']
 -- let g:vsnip_filetypes.typescriptreact = ['typescript']
+
+-- 🎹 Keymaps
+vim.api.nvim_set_keymap('n', '<C-p>', ':<C-u>FZF<CR>', { noremap = true })
