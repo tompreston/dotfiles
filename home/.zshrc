@@ -8,7 +8,7 @@
 
 # source file if it exists
 function sourcefile() {
-	if [ -f $1 ]; then
+	if [ -s $1 ]; then
 		source $1
 	fi
 }
@@ -16,7 +16,7 @@ function sourcefile() {
 # Open vim with fzf
 function vimf() {
 	local file=$(fzf)
-	"$EDITOR" $file
+	"$VISUAL $file"
 	echo $file
 }
 
@@ -30,9 +30,18 @@ function dr() {
 		/bin/bash
 }
 
-export EDITOR="nvim"
-alias vim="$EDITOR"
-alias vimconf="$EDITOR ~/.config/nvim/{init.vim,lua/lsp_config.lua}"
+# Set Neovim as preferred editor
+export VISUAL="nvim"
+export VIMCONFIG="$HOME/.config/nvim"
+export VIMDATA="$HOME/.local/share/nvim"
+
+# Use Neovim instead of vim or vi
+alias vim="$VISUAL"
+alias vi="$VISUAL"
+
+# Open the vim configs
+alias vimconf="$VISUAL $VIMCONFIG/init.vim $VIMCONFIG/lua/lsp_config.lua"
+
 # Use emacs keybindings, which I'm used to
 bindkey -e
 
@@ -47,10 +56,9 @@ alias la="ls -A"
 alias ll="ls -l"
 alias ls="ls -G"
 alias l="ls -CF"
-alias s101_tel=">&2 echo 'Use s101_tng!'"
 
+# Kubernetes completion (adds latency)
 if type kubectl >/dev/null; then
-	# Kubernetes completion (adds latency)
 	autoload -U +X compinit && compinit
 	source <(kubectl completion zsh)
 	alias k="kubectl"
@@ -64,13 +72,12 @@ select-word-style bash
 PROMPT='%n %3~ %# '
 
 # Monzo stuff
-sourcefile $HOME/src/github.com/monzo/starter-pack/zshrc
+sourcefile "$HOME/src/github.com/monzo/starter-pack/zshrc"
 
 # NVM settings (adds latency)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+sourcefile "/usr/local/opt/nvm/nvm.sh"
+sourcefile "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 
 # Set up SSH AUTH SOCK if not already set up
 # TODO delete if we don't need this, ignoring until I see the problem again
@@ -94,4 +101,4 @@ sourcefile /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh
 sourcefile /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 export OAUTHLIB_RELAX_TOKEN_SCOPE=1
-sourcefile /Users/thomaspreston/src/github.com/monzo/analytics/dbt/misc/shell/source.sh
+sourcefile "$HOME/src/github.com/monzo/analytics/dbt/misc/shell/source.sh"
