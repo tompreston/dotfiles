@@ -67,3 +67,9 @@
 [submodule "home/.local/share/nvim/site/pack/plugins/start/vim-dispatch-neovim"]
 	path = home/.local/share/nvim/site/pack/plugins/start/vim-dispatch-neovim
 	url = git@github.com:radenling/vim-dispatch-neovim.git
+[submodule "home/.local/share/nvim/site/pack/plugins/start/LuaSnip"]
+	path = home/.local/share/nvim/site/pack/plugins/start/LuaSnip
+	url = git@github.com:L3MON4D3/LuaSnip.git
+[submodule "home/.local/share/nvim/site/pack/plugins/start/friendly-snippets"]
+	path = home/.config/nvim/friendly-snippets
+	url = git@github.com:rafamadriz/friendly-snippets.git

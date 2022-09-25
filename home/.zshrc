@@ -35,7 +35,7 @@ alias vim="$VISUAL"
 alias vi="$VISUAL"
 
 # Open the vim configs
-alias vimconf="$VISUAL $VIMCONFIG/lua/settings.lua"
+alias vimconf="$VISUAL $VIMCONFIG/init.lua"
 
 # Use emacs keybindings, which I'm used to
 bindkey -e
