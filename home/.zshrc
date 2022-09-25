@@ -13,13 +13,6 @@ function sourcefile() {
 	fi
 }
 
-# Open vim with fzf
-function vimf() {
-	local file=$(fzf)
-	"$VISUAL $file"
-	echo $file
-}
-
 # Docker run some image as an env
 function dr() {
 	local image="$1"
@@ -73,6 +66,8 @@ select-word-style bash
 # Set the prompt
 PROMPT='%n %3~ %# '
 
+sourcefile ~/.fzf.zsh
+
 # Monzo stuff
 sourcefile "$HOME/src/github.com/monzo/starter-pack/zshrc"
 
@@ -105,4 +100,3 @@ sourcefile /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completi
 export OAUTHLIB_RELAX_TOKEN_SCOPE=1
 sourcefile "$HOME/src/github.com/monzo/analytics/dbt/misc/shell/source.sh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
