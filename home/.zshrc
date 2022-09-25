@@ -102,3 +102,5 @@ sourcefile /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completi
 
 export OAUTHLIB_RELAX_TOKEN_SCOPE=1
 sourcefile "$HOME/src/github.com/monzo/analytics/dbt/misc/shell/source.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
