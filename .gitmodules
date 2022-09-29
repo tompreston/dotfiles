@@ -55,12 +55,6 @@
 [submodule "home/.local/share/nvim/site/pack/plugins/start/vim-projectionist"]
 	path = home/.local/share/nvim/site/pack/plugins/start/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist
-[submodule "home/.local/share/nvim/site/pack/plugins/start/fzf"]
-	path = home/.local/share/nvim/site/pack/plugins/start/fzf
-	url = https://github.com/junegunn/fzf
-[submodule "home/.local/share/nvim/site/pack/plugins/start/fzf.vim"]
-	path = home/.local/share/nvim/site/pack/plugins/start/fzf.vim
-	url = git@github.com:junegunn/fzf.vim.git
 [submodule "home/.local/share/nvim/site/pack/plugins/start/vim-dispatch-neovim"]
 	path = home/.local/share/nvim/site/pack/plugins/start/vim-dispatch-neovim
 	url = git@github.com:radenling/vim-dispatch-neovim.git
@@ -70,3 +64,21 @@
 [submodule "home/.local/share/nvim/site/pack/plugins/start/friendly-snippets"]
 	path = home/.config/nvim/friendly-snippets
 	url = git@github.com:rafamadriz/friendly-snippets.git
+[submodule "home/.local/share/nvim/site/pack/plugins/start/telescope.nvim"]
+	path = home/.local/share/nvim/site/pack/plugins/start/telescope.nvim
+	url = git@github.com:nvim-telescope/telescope.nvim.git
+[submodule "home/.local/share/nvim/site/pack/plugins/start/plenary.nvim"]
+	path = home/.local/share/nvim/site/pack/plugins/start/plenary.nvim
+	url = git@github.com:nvim-lua/plenary.nvim.git
+[submodule "home/.local/share/nvim/site/pack/plugins/start/telescope-fzf-native.nvim"]
+	path = home/.local/share/nvim/site/pack/plugins/start/telescope-fzf-native.nvim
+	url = git@github.com:nvim-telescope/telescope-fzf-native.nvim.git
+[submodule "home/.local/share/nvim/site/pack/plugins/start/nvim-treesitter"]
+	path = home/.local/share/nvim/site/pack/plugins/start/nvim-treesitter
+	url = git@github.com:nvim-treesitter/nvim-treesitter.git
+[submodule "home/.local/share/nvim/site/pack/plugins/start/fzf"]
+	path = home/.local/share/nvim/site/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "home/.local/share/nvim/site/pack/plugins/start/fzf.vim"]
+	path = home/.local/share/nvim/site/pack/plugins/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git

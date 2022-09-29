@@ -31,9 +31,6 @@ vim.g.projectionist_heuristics = {
 	},
 }
 
--- 🐻 Fuzzy finder
-vim.api.nvim_set_keymap('n', '<C-p>', ':<C-u>FZF<CR>', { noremap = true })
-
 -- 🌈 Colors
 -- :help highlight-groups
 vim.api.nvim_set_hl(0, 'ColorColumn', {
@@ -43,3 +40,58 @@ vim.api.nvim_set_hl(0, 'ColorColumn', {
 vim.api.nvim_set_hl(0, 'Whitespace', {
 	ctermfg = "LightGrey"
 })
+
+-- 🌲 Treesitter
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "lua", "rust", "go", "bash", "python", "javascript" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
+  -- List of parsers to ignore installing (for "all")
+  ignore_install = { "javascript" },
+
+  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- list of language that will be disabled
+    --disable = { "c", "rust" },
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+
+-- 🐻 Fuzzy finder
+-- The vim.fzf interface is much faster than Telescope and the related issue was closed.
+-- https://github.com/nvim-telescope/telescope.nvim/issues/1837#issuecomment-1113962736
+--
+-- Use the Telescope shortcut to launch it. If it gets fixed in telescope
+-- switch back over. TODO look into this.
+vim.keymap.set('n', '<leader>ff', ':<C-u>FZF<CR>', { noremap = true })
+
+-- 🔭 Telescope
+local telescopebuiltin = require('telescope.builtin')
+-- Use fzf.vim instead of Telescope.find_files because it's faster
+--vim.keymap.set('n', '<leader>ff', telescopebuiltin.find_files)
+vim.keymap.set('n', '<leader>fg', telescopebuiltin.live_grep)
+vim.keymap.set('n', '<leader>fb', telescopebuiltin.buffers)
+vim.keymap.set('n', '<leader>fh', telescopebuiltin.help_tags)
+
+local telescope = require('telescope')
+telescope.setup()
+telescope.load_extension('fzf')
