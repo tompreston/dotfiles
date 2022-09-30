@@ -82,6 +82,8 @@ sourcefile "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 #if [ -z $(pgrep gpg-agent) ]; then
 #	gpg-agent --daemon
 #fi
+# TODO figure out why this is
+eval $(ssh-agent) > /dev/null
 
 # Export tail
 # Random setup scripts like to append here.
@@ -100,3 +102,9 @@ sourcefile /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completi
 export OAUTHLIB_RELAX_TOKEN_SCOPE=1
 sourcefile "$HOME/src/github.com/monzo/analytics/dbt/misc/shell/source.sh"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tompreston/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tompreston/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tompreston/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tompreston/google-cloud-sdk/completion.zsh.inc'; fi
