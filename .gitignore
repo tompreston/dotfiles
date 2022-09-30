@@ -4,5 +4,6 @@ home/.config/iterm2/
 home/.local/share/nvim/.netrwhist
 home/.local/share/nvim/shada/
 home/.local/share/nvim/site/pack/plugins/start/.DS_Store
+home/.local/share/nvim/swap/
 home/.local/share/nvim/telescope_history
 home/.local/share/recently-used.xbel
