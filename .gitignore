@@ -1,1 +1,5 @@
 !home/.*
+
+home/.local/share/nvim/.netrwhist
+home/.local/share/nvim/shada/
+home/.local/share/nvim/telescope_history
