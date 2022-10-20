@@ -117,14 +117,15 @@ require('nvim-treesitter.configs').setup({
 })
 
 -- 🐻 Fuzzy finder
+-- C-p shortcut from Modern vim
+vim.keymap.set('n', '<C-p>', ':<C-u>FZF<CR>', { noremap = true })
 -- The vim.fzf interface is much faster than Telescope and this related issue
 -- was closed.
 -- https://github.com/nvim-telescope/telescope.nvim/issues/1837#issuecomment-1113962736
 --
 -- Use the Telescope shortcut to launch it. If it gets fixed in telescope
 -- switch back over.
--- TODO look into this.
-vim.keymap.set('n', '<leader>ff', ':<C-u>FZF<CR>', { noremap = true })
+-- vim.keymap.set('n', '<leader>ff', ':<C-u>FZF<CR>', { noremap = true })
 
 -- 🔭 Telescope
 local telescopebuiltin = require('telescope.builtin')
