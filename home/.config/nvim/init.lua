@@ -1,3 +1,70 @@
+-- 🔌 Plugins
+require('packer').startup(function(use)
+	use "wbthomason/packer.nvim"
+
+	-- archive, maybe try these out another time
+	-- use "tmux-plugins/tmux-open"
+	-- use "majutsushi/tagbar"
+
+	-- Snippets
+	use "L3MON4D3/LuaSnip"
+	use "rafamadriz/friendly-snippets"
+
+	-- Toggle pairs with [ and ]
+	use "tpope/vim-unimpaired"
+
+	-- Fuzzy finding
+	use "junegunn/fzf"
+	use "junegunn/fzf.vim"
+
+	-- Neovim LSP features
+	use "neovim/nvim-lspconfig"
+
+	-- Telescope
+	use {
+		"nvim-telescope/telescope-fzf-native.nvim",
+		-- this didn't work, I had to run make manually
+		run = "make"
+	}
+	use {
+		"nvim-telescope/telescope.nvim",
+		requires = {"nvim-lua/plenary.nvim"}
+	}
+
+	-- Language support
+	use {
+		"nvim-treesitter/nvim-treesitter",
+		run = function() require("nvim-treesitter.install").update({ with_sync = true }) end,
+	}
+	-- TODO not sure I need these with treesitter
+	use "elubow/cql-vim"
+	use "rust-lang/rust.vim"
+	use "sirtaj/vim-openscad"
+
+	-- Building
+	use "radenling/vim-dispatch-neovim"
+
+	-- comments
+	use "tpope/vim-commentary"
+
+	-- git stuff
+	use "tpope/vim-fugitive"
+	use "tpope/vim-rhubarb"
+
+	-- project structure and alternative files
+	use "tpope/vim-projectionist"
+
+	-- sensible defaults, not sure if I still need this with neovim
+	use "tpope/vim-sensible"
+
+	-- detect file types, not sure if I still need this with treesitter
+	use "tpope/vim-sleuth"
+	use "tpope/vim-surround"
+
+	-- jump to line from filename
+	use "wsdjeg/vim-fetch"
+end)
+
 -- ⚙️  Options
 vim.opt.background = "light"
 vim.opt.colorcolumn = "101"
