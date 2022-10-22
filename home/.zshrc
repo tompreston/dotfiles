@@ -24,21 +24,38 @@ function dr() {
 }
 
 # Set Neovim as preferred editor
-export VISUAL="nvim"
 export VIMCONFIG="$HOME/.config/nvim"
 export VIMDATA="$HOME/.local/share/nvim"
+# If we're in the nvim terminal, use nvr
+if [ -n "$NVIM" ]; then
+	if [ -x "$(command -v nvr)" ]; then
+		alias nvim=nvr
+		alias vim=nvr
+		alias vi=nvr
+	else
+		alias nvim='echo "No nesting!"'
+		alias vim='echo "No nesting!"'
+		alias vi='echo "No nesting!"'
+	fi
+else
+	export VISUAL="nvim"
+	alias vim="$VISUAL"
+	alias vi="$VISUAL"
+fi
 
 export FZF_DEFAULT_COMMAND="rg --files"
 
 # Use Neovim instead of vim or vi
-alias vim="$VISUAL"
-alias vi="$VISUAL"
 
 # Open the vim configs
 alias vimconf="$VISUAL $VIMCONFIG/init.lua"
 
 # Use emacs keybindings, which I'm used to
 bindkey -e
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
 
 alias cdw="cd ~/src/github.com/monzo/wearedev"
 alias cdd="cd ~/Downloads"
@@ -84,6 +101,8 @@ sourcefile "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 #fi
 # TODO figure out why this is
 eval $(ssh-agent) > /dev/null
+
+export PATH="$HOME/Library/Python/3.10/bin:$PATH"
 
 # Export tail
 # Random setup scripts like to append here.

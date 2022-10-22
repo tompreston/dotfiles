@@ -276,8 +276,40 @@ end
 vim.cmd("autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)")
 vim.cmd("autocmd BufWritePre *.go lua go_org_imports()")
 
--- vim-test
+-- 🧪 Testing with vim-test
 vim.keymap.set('n', '<leader>t', ':TestNearest<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>T', ':TestFile<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>l', ':TestLast<CR>', { noremap = true })
 vim.cmd("let test#strategy = 'dispatch'")
+
+-- 🦾 Terminal mode
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('t', '<C-v><Esc>', '<Esc>', { noremap = true })
+-- highlight the terminal cursor (from Modern Vim)
+vim.cmd("highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15")
+-- window switching (from Modern Vim)
+-- normal mode
+vim.keymap.set('n', '<M-h>', '<c-w>h', { noremap = true })
+vim.keymap.set('n', '<M-j>', '<c-w>j', { noremap = true })
+vim.keymap.set('n', '<M-k>', '<c-w>k', { noremap = true })
+vim.keymap.set('n', '<M-l>', '<c-w>l', { noremap = true })
+-- insert mode
+vim.keymap.set('i', '<M-h>', '<Esc><c-w>h', { noremap = true })
+vim.keymap.set('i', '<M-j>', '<Esc><c-w>j', { noremap = true })
+vim.keymap.set('i', '<M-k>', '<Esc><c-w>k', { noremap = true })
+vim.keymap.set('i', '<M-l>', '<Esc><c-w>l', { noremap = true })
+-- visual mode
+vim.keymap.set('v', '<M-h>', '<Esc><c-w>h', { noremap = true })
+vim.keymap.set('v', '<M-j>', '<Esc><c-w>j', { noremap = true })
+vim.keymap.set('v', '<M-k>', '<Esc><c-w>k', { noremap = true })
+vim.keymap.set('v', '<M-l>', '<Esc><c-w>l', { noremap = true })
+-- terminal mode
+vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l', { noremap = true })
+vim.keymap.set('t', '<M-j>', '<c-\\><c-n><c-w>j', { noremap = true })
+vim.keymap.set('t', '<M-k>', '<c-\\><c-n><c-w>k', { noremap = true })
+vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l', { noremap = true })
+
+-- Don't nest nvim sessions, use nvr (from Modern Vim)
+if vim.fn.executable("nvr") then
+	vim.env.VISUAL = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+end
