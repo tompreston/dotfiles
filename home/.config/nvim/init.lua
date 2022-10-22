@@ -1,21 +1,7 @@
 -- 🔌 Plugins
-require('packer').startup(function(use)
+require('packer').startup({
+function(use)
 	use "wbthomason/packer.nvim"
-
-	-- archive, maybe try these out another time
-	-- use "tmux-plugins/tmux-open"
-	-- use "majutsushi/tagbar"
-
-	-- Snippets
-	use "L3MON4D3/LuaSnip"
-	use "rafamadriz/friendly-snippets"
-
-	-- Toggle pairs with [ and ]
-	use "tpope/vim-unimpaired"
-
-	-- Fuzzy finding
-	use "junegunn/fzf"
-	use "junegunn/fzf.vim"
 
 	-- Neovim LSP features
 	use "neovim/nvim-lspconfig"
@@ -42,7 +28,22 @@ require('packer').startup(function(use)
 	use "sirtaj/vim-openscad"
 
 	-- Building
+	use "tpope/vim-dispatch"
 	use "radenling/vim-dispatch-neovim"
+
+	-- Snippets
+	use "L3MON4D3/LuaSnip"
+	use "rafamadriz/friendly-snippets"
+
+	-- Fuzzy finding
+	use "junegunn/fzf"
+	use "junegunn/fzf.vim"
+
+	-- Toggle pairs with [ and ]
+	use "tpope/vim-unimpaired"
+
+	-- Tests
+	use "vim-test/vim-test"
 
 	-- comments
 	use "tpope/vim-commentary"
@@ -63,7 +64,17 @@ require('packer').startup(function(use)
 
 	-- jump to line from filename
 	use "wsdjeg/vim-fetch"
-end)
+
+	-- archive, maybe try these out another time
+	-- use "tmux-plugins/tmux-open"
+	-- use "majutsushi/tagbar"
+end,
+config = {
+	-- Workaround for Packer hanging
+	-- https://github.com/wbthomason/packer.nvim/issues/756#issuecomment-1006695781
+	max_jobs = 10,
+},
+})
 
 -- ⚙️  Options
 vim.opt.background = "light"
@@ -130,10 +141,11 @@ vim.keymap.set('n', '<C-p>', ':<C-u>FZF<CR>', { noremap = true })
 -- 🔭 Telescope
 local telescopebuiltin = require('telescope.builtin')
 -- Use fzf.vim instead of Telescope.find_files because it's faster
---vim.keymap.set('n', '<leader>ff', telescopebuiltin.find_files)
-vim.keymap.set('n', '<leader>fg', telescopebuiltin.live_grep)
-vim.keymap.set('n', '<leader>fb', telescopebuiltin.buffers)
-vim.keymap.set('n', '<leader>fh', telescopebuiltin.help_tags)
+--vim.keymap.set('n', '<leader>f', telescopebuiltin.find_files)
+vim.keymap.set('n', '<leader>*', telescopebuiltin.grep_string)
+vim.keymap.set('n', '<leader>g', telescopebuiltin.live_grep)
+vim.keymap.set('n', '<leader>b', telescopebuiltin.buffers)
+vim.keymap.set('n', '<leader>h', telescopebuiltin.help_tags)
 
 local telescope = require('telescope')
 telescope.setup()
@@ -148,9 +160,9 @@ require("luasnip").setup({
 	update_events = "TextChanged,TextChangedI",
 })
 
--- press <Tab> to expand or jump in a snippet. These can also be mapped separately
--- via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
-vim.cmd("imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'")
+-- press <leader><Tab> to expand or jump in a snippet. These can also be mapped
+-- separately via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+vim.cmd("imap <leader><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'")
 vim.cmd("inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>")
 vim.cmd("snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>")
 vim.cmd("snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>")
@@ -193,12 +205,15 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+-- LSP Python
 require('lspconfig')['pyright'].setup{
 	on_attach = on_attach,
 }
 
--- Rust, auto-format on save
--- TODO use LSP for Rust
+-- LSP Bash
+require('lspconfig')['bashls'].setup{}
+
+-- LSP Rust, auto-format on save
 -- https://rust-analyzer.github.io/manual.html#nvim-lsp
 -- let g:rustfmt_autosave = 1
 require('lspconfig')['rust_analyzer'].setup{
@@ -209,7 +224,7 @@ require('lspconfig')['rust_analyzer'].setup{
 	}
 }
 
--- Setup Go LSP client
+-- LSP Golang
 local util = require "lspconfig.util"
 require('lspconfig')['gopls'].setup{
 	cmd = {"gopls", "serve"},
@@ -260,3 +275,9 @@ end
 -- https://www.getman.io/posts/programming-go-in-neovim/
 vim.cmd("autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)")
 vim.cmd("autocmd BufWritePre *.go lua go_org_imports()")
+
+-- vim-test
+vim.keymap.set('n', '<leader>t', ':TestNearest<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>T', ':TestFile<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>l', ':TestLast<CR>', { noremap = true })
+vim.cmd("let test#strategy = 'dispatch'")
