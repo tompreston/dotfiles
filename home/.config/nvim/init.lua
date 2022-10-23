@@ -132,22 +132,21 @@ require('nvim-treesitter.configs').setup({
 -- 🐻 Fuzzy finder
 -- C-p shortcut from Modern vim
 vim.keymap.set('n', '<C-p>', ':<C-u>FZF<CR>', { noremap = true })
--- The vim.fzf interface is much faster than Telescope and this related issue
--- was closed.
--- https://github.com/nvim-telescope/telescope.nvim/issues/1837#issuecomment-1113962736
---
--- Use the Telescope shortcut to launch it. If it gets fixed in telescope
--- switch back over.
--- vim.keymap.set('n', '<leader>ff', ':<C-u>FZF<CR>', { noremap = true })
+
+-- Create a second FZF Windows command
+-- This is workaround to prevent the W key, which I accidentally press all the
+-- time, aliasing to Windows
+vim.cmd("command! WindowFZF call fzf#vim#windows(<bang>0)")
 
 -- 🔭 Telescope
 local telescopebuiltin = require('telescope.builtin')
 -- Use fzf.vim instead of Telescope.find_files because it's faster
+-- https://github.com/nvim-telescope/telescope.nvim/issues/1837#issuecomment-1113962736
 --vim.keymap.set('n', '<leader>f', telescopebuiltin.find_files)
 vim.keymap.set('n', '<leader>*', telescopebuiltin.grep_string)
-vim.keymap.set('n', '<leader>g', telescopebuiltin.live_grep)
-vim.keymap.set('n', '<leader>b', telescopebuiltin.buffers)
-vim.keymap.set('n', '<leader>h', telescopebuiltin.help_tags)
+vim.keymap.set('n', '<leader>/', telescopebuiltin.live_grep)
+vim.keymap.set('n', '<leader>fb', telescopebuiltin.buffers)
+vim.keymap.set('n', '<leader>fh', telescopebuiltin.help_tags)
 
 local telescope = require('telescope')
 telescope.setup()
