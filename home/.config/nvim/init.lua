@@ -284,6 +284,10 @@ vim.keymap.set('n', '<leader>l', ':TestLast<CR>', { noremap = true })
 vim.cmd("let test#strategy = 'dispatch'")
 
 -- 🦾 Terminal mode
+-- Use Esc to go to normal-terminal mode (C-c to exit terminal overlays like
+-- Telescope and FZF)
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('t', '<C-v><Esc>', '<Esc>', { noremap = true })
 -- highlight the terminal cursor (from Modern Vim)
 vim.cmd("highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15")
 -- window switching (from Modern Vim)
@@ -307,11 +311,6 @@ vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l', { noremap = true })
 vim.keymap.set('t', '<M-j>', '<c-\\><c-n><c-w>j', { noremap = true })
 vim.keymap.set('t', '<M-k>', '<c-\\><c-n><c-w>k', { noremap = true })
 vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l', { noremap = true })
--- From Modern Vim, these mapping let us use Esc to go to normal-terminal mode,
--- rather than the awkward C-\C-n. However it breaks Esc closing terminal
--- overlays such as fzf or Telescope.
---vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
---vim.keymap.set('t', '<C-v><Esc>', '<Esc>', { noremap = true })
 
 -- Don't nest nvim sessions, use nvr (from Modern Vim)
 if vim.fn.executable("nvr") then
