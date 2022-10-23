@@ -161,9 +161,9 @@ require("luasnip").setup({
 	update_events = "TextChanged,TextChangedI",
 })
 
--- press <leader><Tab> to expand or jump in a snippet. These can also be mapped
+-- press <Tab> to expand or jump in a snippet. These can also be mapped
 -- separately via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
-vim.cmd("imap <leader><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'")
+vim.cmd("imap <expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'")
 vim.cmd("inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>")
 vim.cmd("snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>")
 vim.cmd("snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>")
@@ -257,7 +257,7 @@ require('lspconfig')['gopls'].setup{
 }
 
 -- LSP config for Go
--- Organise imports like goimports
+-- On save, organise imports like goimports
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#imports
 function go_org_imports(wait_ms)
 	local params = vim.lsp.util.make_range_params()
@@ -272,10 +272,10 @@ function go_org_imports(wait_ms)
 		end
 	end
 end
-
--- https://www.getman.io/posts/programming-go-in-neovim/
-vim.cmd("autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)")
 vim.cmd("autocmd BufWritePre *.go lua go_org_imports()")
+
+-- On save, organise imports
+vim.cmd("autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)")
 
 -- 🧪 Testing with vim-test
 vim.keymap.set('n', '<leader>t', ':TestNearest<CR>', { noremap = true })
@@ -284,8 +284,6 @@ vim.keymap.set('n', '<leader>l', ':TestLast<CR>', { noremap = true })
 vim.cmd("let test#strategy = 'dispatch'")
 
 -- 🦾 Terminal mode
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
-vim.keymap.set('t', '<C-v><Esc>', '<Esc>', { noremap = true })
 -- highlight the terminal cursor (from Modern Vim)
 vim.cmd("highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15")
 -- window switching (from Modern Vim)
@@ -309,6 +307,11 @@ vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l', { noremap = true })
 vim.keymap.set('t', '<M-j>', '<c-\\><c-n><c-w>j', { noremap = true })
 vim.keymap.set('t', '<M-k>', '<c-\\><c-n><c-w>k', { noremap = true })
 vim.keymap.set('t', '<M-l>', '<c-\\><c-n><c-w>l', { noremap = true })
+-- From Modern Vim, these mapping let us use Esc to go to normal-terminal mode,
+-- rather than the awkward C-\C-n. However it breaks Esc closing terminal
+-- overlays such as fzf or Telescope.
+--vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+--vim.keymap.set('t', '<C-v><Esc>', '<Esc>', { noremap = true })
 
 -- Don't nest nvim sessions, use nvr (from Modern Vim)
 if vim.fn.executable("nvr") then
