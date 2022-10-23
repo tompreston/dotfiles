@@ -58,8 +58,10 @@ function(use)
 	-- sensible defaults, not sure if I still need this with neovim
 	use "tpope/vim-sensible"
 
+	-- Check .editorconfig for indents
+	use "editorconfig/editorconfig-vim"
+
 	-- detect file types, not sure if I still need this with treesitter
-	use "tpope/vim-sleuth"
 	use "tpope/vim-surround"
 
 	-- jump to line from filename
