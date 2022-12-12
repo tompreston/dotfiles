@@ -131,6 +131,8 @@ require('nvim-treesitter.configs').setup({
     additional_vim_regex_highlighting = false,
   },
 })
+-- Turn off error highlighting, because it highlights in insert mode
+vim.treesitter.highlighter.hl_map.error = nil
 
 -- 🐻 Fuzzy finder
 -- C-p shortcut from Modern vim
