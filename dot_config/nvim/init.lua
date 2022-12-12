@@ -67,6 +67,8 @@ function(use)
 	-- jump to line from filename
 	use "wsdjeg/vim-fetch"
 
+	use "AndrewRadev/splitjoin.vim"
+
 	-- archive, maybe try these out another time
 	-- use "tmux-plugins/tmux-open"
 	-- use "majutsushi/tagbar"
@@ -80,7 +82,8 @@ config = {
 
 -- ⚙️  Options
 vim.opt.background = "light"
-vim.opt.colorcolumn = "101"
+vim.opt.colorcolumn = "121"
+vim.opt.textwidth = 120
 vim.opt.number = true
 table.insert(vim.opt.path, "**")
 
