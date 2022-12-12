@@ -157,7 +157,7 @@ telescope.load_extension('fzf')
 
 -- ✂️  Snippets
 require("luasnip.loaders.from_vscode").lazy_load({
-	paths = { "./friendly-snippets" }
+	paths = { "/Users/tompreston/.local/share/nvim/site/pack/packer/start/friendly-snippets/" }
 })
 require("luasnip").setup({
 	-- Update more often, :h events for more info.
